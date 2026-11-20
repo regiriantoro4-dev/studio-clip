@@ -1,0 +1,36 @@
+[
+  {
+    "id": "default",
+    "name": "KOPLO77",
+    "brand": "KOPLO77",
+    "tagline": "winner winner chicker diner",
+    "handle": "@KOPLO77",
+    "website": "",
+    "welcome": "Selamat menonton!",
+    "logo": "",
+    "font": "Bebas Neue",
+    "colors": {
+      "primary": "#b7810b",
+      "secondary": "#2A2F3A",
+      "accent": "#d41c40",
+      "text": "#FFFFFF"
+    }
+  },
+  {
+    "handle": "@KOPLO77",
+    "id": "royal",
+    "website": "",
+    "colors": {
+      "accent": "#E8B84E",
+      "secondary": "#1E0306",
+      "primary": "#8A0E16",
+      "text": "#FFFFFF"
+    },
+    "font": "Bebas Neue",
+    "name": "KOPLO77 Royal (merah-emas)",
+    "welcome": "Selamat menonton!",
+    "brand": "KOPLO77",
+    "tagline": "winner winner chicker diner",
+    "logo": ""
+  }
+]

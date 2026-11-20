@@ -1,0 +1,544 @@
+[
+  {
+    "id": "20261111162107ef1c",
+    "name": "Arcade Retro",
+    "file": "20261111162107ef1c.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      104,
+      248,
+      872,
+      1208
+    ]
+  },
+  {
+    "id": "20261111184127e328",
+    "file": "20261111184127e328.png",
+    "name": "Royal Ornamen",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      95,
+      110,
+      890,
+      1360
+    ],
+    "source": "studio",
+    "v": 1794397292
+  },
+  {
+    "id": "20261111191430b657",
+    "name": "Api Lava 1",
+    "file": "20261111191430b657.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      88,
+      108,
+      904,
+      1384
+    ],
+    "src": "api_1528128242.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914300685",
+    "name": "Api Lava 2",
+    "file": "202611111914300685.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      84,
+      108,
+      912,
+      1384
+    ],
+    "src": "api_2053269715.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191431e744",
+    "name": "Batik Kayu 1",
+    "file": "20261111191431e744.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "batik_745898393.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914319886",
+    "name": "Cyber Neon 1",
+    "file": "202611111914319886.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      108,
+      120,
+      864,
+      1320
+    ],
+    "src": "cyber_1469942345.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191431de3e",
+    "name": "Cyber Neon 2",
+    "file": "20261111191431de3e.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1376
+    ],
+    "src": "cyber_159061943.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914314970",
+    "name": "Cyber Neon 3",
+    "file": "202611111914314970.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "cyber_1659173594.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914317f2e",
+    "name": "Cyber Neon 4",
+    "file": "202611111914317f2e.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1376
+    ],
+    "src": "cyber_710439146.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191432ff34",
+    "name": "Es Kristal 1",
+    "file": "20261111191432ff34.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      108,
+      120,
+      864,
+      1320
+    ],
+    "src": "es_1496065240.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914322a99",
+    "name": "Es Kristal 2",
+    "file": "202611111914322a99.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      104,
+      896,
+      1372
+    ],
+    "src": "es_2081417367.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "2026111119143233aa",
+    "name": "Es Kristal 3",
+    "file": "2026111119143233aa.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1364
+    ],
+    "src": "es_388109131.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914326105",
+    "name": "Es Kristal 4",
+    "file": "202611111914326105.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      104,
+      896,
+      1368
+    ],
+    "src": "es_931330546.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191433e92b",
+    "name": "Gothic Ungu 1",
+    "file": "20261111191433e92b.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "gothic_1091856151.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191433d501",
+    "name": "Gothic Ungu 2",
+    "file": "20261111191433d501.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1372
+    ],
+    "src": "gothic_1653945613.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191433f331",
+    "name": "Hutan Zamrud 1",
+    "file": "20261111191433f331.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      80,
+      104,
+      916,
+      1372
+    ],
+    "src": "hutan_2437211.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191433a681",
+    "name": "Hutan Zamrud 2",
+    "file": "20261111191433a681.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "hutan_642273503.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914349acd",
+    "name": "Islami Hijau 1",
+    "file": "202611111914349acd.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "islami_1485038275.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914341338",
+    "name": "Islami Hijau 2",
+    "file": "202611111914341338.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      104,
+      896,
+      1372
+    ],
+    "src": "islami_1564754068.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914347432",
+    "name": "Islami Hijau 3",
+    "file": "202611111914347432.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      108,
+      120,
+      864,
+      1320
+    ],
+    "src": "islami_1635183958.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "2026111119143405c8",
+    "name": "Islami Hijau 4",
+    "file": "2026111119143405c8.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "islami_1735949667.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914342441",
+    "name": "Laut Toska 1",
+    "file": "202611111914342441.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1364
+    ],
+    "src": "laut_1348523683.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191435665c",
+    "name": "Laut Toska 2",
+    "file": "20261111191435665c.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1360
+    ],
+    "src": "laut_883982785.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914358e5b",
+    "name": "Mewah Hitam Emas 1",
+    "file": "202611111914358e5b.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1372
+    ],
+    "src": "mewah_1168924463.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191435a978",
+    "name": "Mewah Hitam Emas 2",
+    "file": "20261111191435a978.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "mewah_2079044726.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "2026111119143572a5",
+    "name": "Naga Merah 1",
+    "file": "2026111119143572a5.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "naga_1555917036.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191436c1eb",
+    "name": "Royal Merah Emas 1",
+    "file": "20261111191436c1eb.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "royal_1722050834.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914360945",
+    "name": "Royal Merah Emas 2",
+    "file": "202611111914360945.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      100,
+      896,
+      1380
+    ],
+    "src": "royal_2012023864.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "2026111119143659bf",
+    "name": "Royal Merah Emas 3",
+    "file": "2026111119143659bf.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1384
+    ],
+    "src": "royal_2144155151.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "2026111119143662fc",
+    "name": "Royal Merah Emas 4",
+    "file": "2026111119143662fc.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      108,
+      120,
+      864,
+      1320
+    ],
+    "src": "royal_685073174.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "202611111914365950",
+    "name": "Sakura Pink 1",
+    "file": "202611111914365950.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "sakura_1032672766.png",
+    "source": "ornamen-ai"
+  },
+  {
+    "id": "20261111191437dc2c",
+    "name": "Sakura Pink 2",
+    "file": "20261111191437dc2c.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      88,
+      104,
+      904,
+      1372
+    ],
+    "src": "sakura_1201831990.png",
+    "source": "ornamen-ai"
+  }
+]

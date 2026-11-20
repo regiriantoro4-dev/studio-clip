@@ -9,13 +9,16 @@
 !backend/settings.example.json
 .claude/settings.local.json
 
-# --- Data kerja app (bawa lewat flashdisk/SSD, lihat PINDAH-KE-MAC.md bagian 5) ---
-# Font bawaan tetap ikut supaya Frame Studio tampil sama di perangkat baru.
+# --- Data app ---
+# IKUT (pengaturan & aset, supaya perangkat baru sama persis): assets/ (font, frame,
+#   ornamen, sfx, musik), studio/ (desain & preset Frame Studio), aturan acak gaya.
+# TIDAK IKUT: settings.json (API key), projects/ (hasil produksi), bumpers/ (cache,
+#   dibuat ulang otomatis), factory/ (antrean job), horror_drafts/ & horror_history.json.
 backend/data/*
 !backend/data/assets/
-backend/data/assets/*
-!backend/data/assets/fonts/
-backend/data/assets/fonts/user/
+!backend/data/studio/
+!backend/data/acak_gaya.json
+!backend/data/acak_gaya_riwayat.json
 
 # --- Video / audio hasil ---
 Siap Upload/
@@ -61,3 +64,6 @@ frontend/src.backup-*/
 Thumbs.db
 /25000
 /{
+
+# Aset app (musik/sfx) tetap ikut walau ada aturan *.mp3/*.wav di atas
+!backend/data/assets/**

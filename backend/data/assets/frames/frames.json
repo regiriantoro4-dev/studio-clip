@@ -1,0 +1,1707 @@
+[
+  {
+    "id": "20261111162107ef1c",
+    "name": "Arcade Retro",
+    "file": "20261111162107ef1c.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      104,
+      248,
+      872,
+      1208
+    ]
+  },
+  {
+    "id": "20261111184127e328",
+    "file": "20261111184127e328.png",
+    "name": "Royal Ornamen",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      95,
+      110,
+      890,
+      1360
+    ],
+    "source": "studio",
+    "v": 1794408174
+  },
+  {
+    "id": "20261111191430b657",
+    "name": "Api Lava 1",
+    "file": "20261111191430b657.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      88,
+      108,
+      904,
+      1384
+    ],
+    "src": "api_1528128242.png",
+    "source": "ornamen-ai",
+    "board": [
+      88,
+      1542,
+      618,
+      1802
+    ],
+    "accent": "#EB8D44"
+  },
+  {
+    "id": "202611111914300685",
+    "name": "Api Lava 2",
+    "file": "202611111914300685.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      84,
+      108,
+      912,
+      1384
+    ],
+    "src": "api_2053269715.png",
+    "source": "ornamen-ai",
+    "board": [
+      90,
+      1540,
+      990,
+      1788
+    ],
+    "accent": "#EB9439"
+  },
+  {
+    "id": "20261111191431e744",
+    "name": "Batik Kayu 1",
+    "file": "20261111191431e744.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "batik_745898393.png",
+    "source": "ornamen-ai",
+    "board": [
+      114,
+      1544,
+      970,
+      1784
+    ],
+    "accent": "#EBAF4E"
+  },
+  {
+    "id": "202611111914319886",
+    "name": "Cyber Neon 1",
+    "file": "202611111914319886.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      108,
+      120,
+      864,
+      1320
+    ],
+    "src": "cyber_1469942345.png",
+    "source": "ornamen-ai",
+    "board": [
+      108,
+      1546,
+      974,
+      1802
+    ],
+    "accent": "#EB46D0"
+  },
+  {
+    "id": "20261111191431de3e",
+    "name": "Cyber Neon 2",
+    "file": "20261111191431de3e.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1376
+    ],
+    "src": "cyber_159061943.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1538,
+      990,
+      1800
+    ],
+    "accent": "#EA20B7"
+  },
+  {
+    "id": "202611111914314970",
+    "name": "Cyber Neon 3",
+    "file": "202611111914314970.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "cyber_1659173594.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1498,
+      990,
+      1802
+    ],
+    "accent": "#EB24BD"
+  },
+  {
+    "id": "202611111914317f2e",
+    "name": "Cyber Neon 4",
+    "file": "202611111914317f2e.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1376
+    ],
+    "src": "cyber_710439146.png",
+    "source": "ornamen-ai",
+    "board": [
+      90,
+      1540,
+      990,
+      1788
+    ],
+    "accent": "#EB2BB9"
+  },
+  {
+    "id": "20261111191432ff34",
+    "name": "Es Kristal 1",
+    "file": "20261111191432ff34.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      108,
+      120,
+      864,
+      1320
+    ],
+    "src": "es_1496065240.png",
+    "source": "ornamen-ai",
+    "board": [
+      108,
+      1510,
+      974,
+      1802
+    ],
+    "accent": "#B6D6EB"
+  },
+  {
+    "id": "202611111914322a99",
+    "name": "Es Kristal 2",
+    "file": "202611111914322a99.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      104,
+      896,
+      1372
+    ],
+    "src": "es_2081417367.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1502,
+      546,
+      1802
+    ],
+    "accent": "#EBC98A"
+  },
+  {
+    "id": "2026111119143233aa",
+    "name": "Es Kristal 3",
+    "file": "2026111119143233aa.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1364
+    ],
+    "src": "es_388109131.png",
+    "source": "ornamen-ai",
+    "board": [
+      100,
+      1544,
+      980,
+      1788
+    ],
+    "accent": "#EAB86E"
+  },
+  {
+    "id": "202611111914326105",
+    "name": "Es Kristal 4",
+    "file": "202611111914326105.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      104,
+      896,
+      1368
+    ],
+    "src": "es_931330546.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1536,
+      990,
+      1788
+    ],
+    "accent": "#EBCFA0"
+  },
+  {
+    "id": "20261111191433e92b",
+    "name": "Gothic Ungu 1",
+    "file": "20261111191433e92b.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "gothic_1091856151.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1544,
+      990,
+      1802
+    ],
+    "accent": "#EBCDDE"
+  },
+  {
+    "id": "20261111191433d501",
+    "name": "Gothic Ungu 2",
+    "file": "20261111191433d501.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1372
+    ],
+    "src": "gothic_1653945613.png",
+    "source": "ornamen-ai",
+    "board": [
+      90,
+      1540,
+      990,
+      1788
+    ],
+    "accent": "#EBA2C0"
+  },
+  {
+    "id": "20261111191433f331",
+    "name": "Hutan Zamrud 1",
+    "file": "20261111191433f331.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      80,
+      104,
+      916,
+      1372
+    ],
+    "src": "hutan_2437211.png",
+    "source": "ornamen-ai",
+    "board": [
+      82,
+      1498,
+      994,
+      1786
+    ],
+    "accent": "#EBCF73"
+  },
+  {
+    "id": "20261111191433a681",
+    "name": "Hutan Zamrud 2",
+    "file": "20261111191433a681.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "hutan_642273503.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1498,
+      990,
+      1790
+    ],
+    "accent": "#EBBD62"
+  },
+  {
+    "id": "202611111914349acd",
+    "name": "Islami Hijau 1",
+    "file": "202611111914349acd.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "islami_1485038275.png",
+    "source": "ornamen-ai",
+    "board": [
+      94,
+      1498,
+      990,
+      1786
+    ],
+    "accent": "#EBCD6A"
+  },
+  {
+    "id": "202611111914341338",
+    "name": "Islami Hijau 2",
+    "file": "202611111914341338.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      104,
+      896,
+      1372
+    ],
+    "src": "islami_1564754068.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1536,
+      990,
+      1784
+    ],
+    "accent": "#EBCC5F"
+  },
+  {
+    "id": "202611111914347432",
+    "name": "Islami Hijau 3",
+    "file": "202611111914347432.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      108,
+      120,
+      864,
+      1320
+    ],
+    "src": "islami_1635183958.png",
+    "source": "ornamen-ai",
+    "board": [
+      108,
+      1492,
+      974,
+      1802
+    ],
+    "accent": "#EBB75C"
+  },
+  {
+    "id": "2026111119143405c8",
+    "name": "Islami Hijau 4",
+    "file": "2026111119143405c8.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "islami_1735949667.png",
+    "source": "ornamen-ai",
+    "board": [
+      138,
+      1546,
+      944,
+      1802
+    ],
+    "accent": "#EBBF5E"
+  },
+  {
+    "id": "202611111914342441",
+    "name": "Laut Toska 1",
+    "file": "202611111914342441.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1364
+    ],
+    "src": "laut_1348523683.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1538,
+      990,
+      1782
+    ],
+    "accent": "#EBC479"
+  },
+  {
+    "id": "20261111191435665c",
+    "name": "Laut Toska 2",
+    "file": "20261111191435665c.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1360
+    ],
+    "src": "laut_883982785.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1538,
+      990,
+      1802
+    ],
+    "accent": "#EBC358"
+  },
+  {
+    "id": "202611111914358e5b",
+    "name": "Mewah Hitam Emas 1",
+    "file": "202611111914358e5b.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1372
+    ],
+    "src": "mewah_1168924463.png",
+    "source": "ornamen-ai",
+    "board": [
+      96,
+      1548,
+      984,
+      1784
+    ],
+    "accent": "#F1D085"
+  },
+  {
+    "id": "20261111191435a978",
+    "name": "Mewah Hitam Emas 2",
+    "file": "20261111191435a978.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "mewah_2079044726.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1546,
+      990,
+      1790
+    ],
+    "accent": "#F1CA89"
+  },
+  {
+    "id": "2026111119143572a5",
+    "name": "Naga Merah 1",
+    "file": "2026111119143572a5.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "naga_1555917036.png",
+    "source": "ornamen-ai",
+    "board": [
+      96,
+      1534,
+      984,
+      1798
+    ],
+    "accent": "#EBAD54"
+  },
+  {
+    "id": "20261111191436c1eb",
+    "name": "Royal Merah Emas 1",
+    "file": "20261111191436c1eb.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "royal_1722050834.png",
+    "source": "ornamen-ai",
+    "board": [
+      94,
+      1498,
+      984,
+      1802
+    ],
+    "accent": "#EBAA58"
+  },
+  {
+    "id": "202611111914360945",
+    "name": "Royal Merah Emas 2",
+    "file": "202611111914360945.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      100,
+      896,
+      1380
+    ],
+    "src": "royal_2012023864.png",
+    "source": "ornamen-ai",
+    "board": [
+      112,
+      1540,
+      984,
+      1776
+    ],
+    "accent": "#EB9E3F"
+  },
+  {
+    "id": "2026111119143659bf",
+    "name": "Royal Merah Emas 3",
+    "file": "2026111119143659bf.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1384
+    ],
+    "src": "royal_2144155151.png",
+    "source": "ornamen-ai",
+    "board": [
+      98,
+      1514,
+      980,
+      1802
+    ],
+    "accent": "#ECAF4E"
+  },
+  {
+    "id": "2026111119143662fc",
+    "name": "Royal Merah Emas 4",
+    "file": "2026111119143662fc.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      108,
+      120,
+      864,
+      1320
+    ],
+    "src": "royal_685073174.png",
+    "source": "ornamen-ai",
+    "board": [
+      108,
+      1494,
+      974,
+      1802
+    ],
+    "accent": "#EB8D43"
+  },
+  {
+    "id": "202611111914365950",
+    "name": "Sakura Pink 1",
+    "file": "202611111914365950.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "sakura_1032672766.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1524,
+      990,
+      1802
+    ],
+    "accent": "#F4BA6D"
+  },
+  {
+    "id": "20261111191437dc2c",
+    "name": "Sakura Pink 2",
+    "file": "20261111191437dc2c.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      88,
+      104,
+      904,
+      1372
+    ],
+    "src": "sakura_1201831990.png",
+    "source": "ornamen-ai",
+    "board": [
+      114,
+      1500,
+      978,
+      1796
+    ],
+    "accent": "#EBB766"
+  },
+  {
+    "id": "202611111927370383",
+    "name": "Angkasa Galaksi 1",
+    "file": "202611111927370383.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      104,
+      896,
+      1380
+    ],
+    "src": "angkasa_127403299.png",
+    "source": "ornamen-ai",
+    "board": [
+      90,
+      1540,
+      990,
+      1788
+    ],
+    "accent": "#EBD2B4"
+  },
+  {
+    "id": "20261111192738fca6",
+    "name": "Angkasa Galaksi 2",
+    "file": "20261111192738fca6.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      908,
+      1384
+    ],
+    "src": "angkasa_1360268870.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1542,
+      988,
+      1802
+    ],
+    "accent": "#70DBEB"
+  },
+  {
+    "id": "20261111192738ae85",
+    "name": "Horor Halloween 1",
+    "file": "20261111192738ae85.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      88,
+      108,
+      904,
+      1380
+    ],
+    "src": "horor_1965313089.png",
+    "source": "ornamen-ai",
+    "board": [
+      114,
+      1510,
+      964,
+      1802
+    ],
+    "accent": "#EB7132"
+  },
+  {
+    "id": "20261111192738be24",
+    "name": "Horor Halloween 2",
+    "file": "20261111192738be24.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      88,
+      84,
+      900,
+      1408
+    ],
+    "src": "horor_844643603.png",
+    "source": "ornamen-ai",
+    "board": [
+      88,
+      1528,
+      990,
+      1800
+    ],
+    "accent": "#EB6C2A"
+  },
+  {
+    "id": "20261111192738a2bf",
+    "name": "Keraton Jawa 1",
+    "file": "20261111192738a2bf.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      96,
+      896,
+      1380
+    ],
+    "src": "keraton_1126315630.png",
+    "source": "ornamen-ai",
+    "board": [
+      98,
+      1544,
+      982,
+      1786
+    ],
+    "accent": "#EACC62"
+  },
+  {
+    "id": "2026111119273920f9",
+    "name": "Keraton Jawa 2",
+    "file": "2026111119273920f9.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1376
+    ],
+    "src": "keraton_1531270055.png",
+    "source": "ornamen-ai",
+    "board": [
+      98,
+      1548,
+      982,
+      1802
+    ],
+    "accent": "#ECC485"
+  },
+  {
+    "id": "202611111927393709",
+    "name": "Permen Pastel 1",
+    "file": "202611111927393709.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1372
+    ],
+    "src": "permen_1264190791.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1502,
+      550,
+      1802
+    ],
+    "accent": "#EB7E8A"
+  },
+  {
+    "id": "202611111927390362",
+    "name": "Petir Badai 1",
+    "file": "202611111927390362.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1364
+    ],
+    "src": "petir_1047101409.png",
+    "source": "ornamen-ai",
+    "board": [
+      90,
+      1540,
+      990,
+      1788
+    ],
+    "accent": "#EBB26D"
+  },
+  {
+    "id": "202611111927392cdb",
+    "name": "Petir Badai 2",
+    "file": "202611111927392cdb.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "petir_486789366.png",
+    "source": "ornamen-ai",
+    "board": [
+      142,
+      1546,
+      980,
+      1782
+    ],
+    "accent": "#EBB75D"
+  },
+  {
+    "id": "2026111119274022a3",
+    "name": "Racing Merah Hitam 1",
+    "file": "2026111119274022a3.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      96,
+      896,
+      1392
+    ],
+    "src": "racing_296727212.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1550,
+      990,
+      1790
+    ],
+    "accent": "#EB4941"
+  },
+  {
+    "id": "202611111927407c74",
+    "name": "Racing Merah Hitam 2",
+    "file": "202611111927407c74.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "racing_986293867.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1538,
+      990,
+      1802
+    ],
+    "accent": "#EB403B"
+  },
+  {
+    "id": "20261111192740c40d",
+    "name": "Ramadan Malam 1",
+    "file": "20261111192740c40d.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1372
+    ],
+    "src": "ramadan_126169733.png",
+    "source": "ornamen-ai",
+    "board": [
+      96,
+      1544,
+      982,
+      1798
+    ],
+    "accent": "#EBC292"
+  },
+  {
+    "id": "20261111192740121a",
+    "name": "Ramadan Malam 2",
+    "file": "20261111192740121a.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "ramadan_1452044495.png",
+    "source": "ornamen-ai",
+    "board": [
+      96,
+      1534,
+      986,
+      1794
+    ],
+    "accent": "#F4DB87"
+  },
+  {
+    "id": "20261111192741b135",
+    "name": "Royal Biru Emas 1",
+    "file": "20261111192741b135.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "royalbiru_2142579275.png",
+    "source": "ornamen-ai",
+    "board": [
+      98,
+      1542,
+      978,
+      1796
+    ],
+    "accent": "#F9CE72"
+  },
+  {
+    "id": "202611111927414d49",
+    "name": "Royal Biru Emas 2",
+    "file": "202611111927414d49.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      96,
+      896,
+      1388
+    ],
+    "src": "royalbiru_540644521.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1506,
+      990,
+      1802
+    ],
+    "accent": "#EBBF52"
+  },
+  {
+    "id": "202611111927414eff",
+    "name": "Royal Hijau Emas 1",
+    "file": "202611111927414eff.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1376
+    ],
+    "src": "royalhijau_1577567876.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1530,
+      990,
+      1790
+    ],
+    "accent": "#EBC547"
+  },
+  {
+    "id": "202611111927423355",
+    "name": "Royal Hijau Emas 2",
+    "file": "202611111927423355.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "royalhijau_268937326.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1498,
+      990,
+      1802
+    ],
+    "accent": "#F3D560"
+  },
+  {
+    "id": "202611111927423fa9",
+    "name": "Royal Hitam Emas 1",
+    "file": "202611111927423fa9.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      104,
+      896,
+      1376
+    ],
+    "src": "royalhitam_1862863213.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1544,
+      986,
+      1786
+    ],
+    "accent": "#EBAA52"
+  },
+  {
+    "id": "20261111192742b290",
+    "name": "Royal Hitam Emas 2",
+    "file": "20261111192742b290.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1372
+    ],
+    "src": "royalhitam_2093987485.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1548,
+      990,
+      1786
+    ],
+    "accent": "#EBC16C"
+  },
+  {
+    "id": "20261111192742e32a",
+    "name": "Royal Ungu Emas 1",
+    "file": "20261111192742e32a.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1364
+    ],
+    "src": "royalungu_667535794.png",
+    "source": "ornamen-ai",
+    "board": [
+      108,
+      1496,
+      976,
+      1802
+    ],
+    "accent": "#EBB770"
+  },
+  {
+    "id": "202611111927432a2c",
+    "name": "Rustic Kayu 1",
+    "file": "202611111927432a2c.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1372
+    ],
+    "src": "rustic_1778860948.png",
+    "source": "ornamen-ai",
+    "board": [
+      98,
+      1540,
+      990,
+      1780
+    ],
+    "accent": "#EB9A5D"
+  },
+  {
+    "id": "20261111192743d3b6",
+    "name": "Steampunk Tembaga 1",
+    "file": "20261111192743d3b6.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      104,
+      896,
+      1380
+    ],
+    "src": "steampunk_503134446.png",
+    "source": "ornamen-ai",
+    "board": [
+      98,
+      1546,
+      990,
+      1794
+    ],
+    "accent": "#EAA876"
+  },
+  {
+    "id": "2026111119274325dd",
+    "name": "Synthwave Retro 1",
+    "file": "2026111119274325dd.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "synthwave_284612640.png",
+    "source": "ornamen-ai",
+    "board": [
+      90,
+      1540,
+      990,
+      1788
+    ],
+    "accent": "#EA3C82"
+  },
+  {
+    "id": "202611111927447b2c",
+    "name": "Synthwave Retro 2",
+    "file": "202611111927447b2c.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "synthwave_659661717.png",
+    "source": "ornamen-ai",
+    "board": [
+      98,
+      1544,
+      984,
+      1788
+    ],
+    "accent": "#EB5B34"
+  },
+  {
+    "id": "202611111927442c91",
+    "name": "Mesir Kuno 1",
+    "file": "202611111927442c91.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      88,
+      104,
+      900,
+      1376
+    ],
+    "src": "tembaga_1236971915.png",
+    "source": "ornamen-ai",
+    "board": [
+      88,
+      1530,
+      990,
+      1802
+    ],
+    "accent": "#EAAA5A"
+  },
+  {
+    "id": "202611111927446b7a",
+    "name": "Toxic Hijau Neon 1",
+    "file": "202611111927446b7a.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "toxic_1131980158.png",
+    "source": "ornamen-ai",
+    "board": [
+      98,
+      1538,
+      982,
+      1776
+    ],
+    "accent": "#AEEC32"
+  },
+  {
+    "id": "20261111192745e84c",
+    "name": "Toxic Hijau Neon 2",
+    "file": "20261111192745e84c.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      92,
+      108,
+      896,
+      1368
+    ],
+    "src": "toxic_671711333.png",
+    "source": "ornamen-ai",
+    "board": [
+      92,
+      1498,
+      990,
+      1802
+    ],
+    "accent": "#A6EB17"
+  },
+  {
+    "id": "20261112150505cham",
+    "file": "20261112150505cham.png",
+    "name": "Esports Champion",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      60,
+      236,
+      960,
+      1236
+    ],
+    "board": [
+      96,
+      1540,
+      984,
+      1790
+    ],
+    "accent": "#E8C46A",
+    "source": "pack",
+    "pack": "champion",
+    "fanim": {
+      "type": "runner",
+      "color": "#FFE7A3"
+    },
+    "v": 1794470705
+  },
+  {
+    "id": "20261112150505impe",
+    "file": "20261112150505impe.png",
+    "name": "Neon Impetus",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      60,
+      236,
+      960,
+      1236
+    ],
+    "board": [
+      96,
+      1540,
+      984,
+      1790
+    ],
+    "accent": "#FF2A3D",
+    "source": "pack",
+    "pack": "impetus",
+    "fanim": {
+      "type": "pulse",
+      "color": "#FF2A3D"
+    },
+    "v": 1794470705
+  },
+  {
+    "id": "20261112150505diag",
+    "file": "20261112150505diag.png",
+    "name": "Esports Diagonal",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      60,
+      236,
+      960,
+      1236
+    ],
+    "board": [
+      96,
+      1540,
+      984,
+      1790
+    ],
+    "accent": "#E3132C",
+    "source": "pack",
+    "pack": "diagonal",
+    "fanim": {
+      "type": "runner",
+      "color": "#FFFFFF"
+    },
+    "v": 1794470705
+  },
+  {
+    "id": "20261112150506redg",
+    "file": "20261112150506redg.png",
+    "name": "Red Glitch HUD",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      60,
+      236,
+      960,
+      1236
+    ],
+    "board": [
+      96,
+      1540,
+      984,
+      1790
+    ],
+    "accent": "#FF1F3A",
+    "source": "pack",
+    "pack": "redglitch",
+    "fanim": {
+      "type": "glitch",
+      "color": "#FF1F3A"
+    },
+    "v": 1794470706
+  },
+  {
+    "id": "20261112150506cybe",
+    "file": "20261112150506cybe.png",
+    "name": "Cyberpunk 77",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      60,
+      236,
+      960,
+      1236
+    ],
+    "board": [
+      96,
+      1540,
+      984,
+      1790
+    ],
+    "accent": "#FCEE0A",
+    "source": "pack",
+    "pack": "cyber77",
+    "fanim": {
+      "type": "glitch",
+      "color": "#FF2E88"
+    },
+    "v": 1794470706
+  },
+  {
+    "id": "20261112150506chro",
+    "file": "20261112150506chro.png",
+    "name": "Chroma Neon",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      60,
+      236,
+      960,
+      1236
+    ],
+    "board": [
+      96,
+      1540,
+      984,
+      1790
+    ],
+    "accent": "#FF4FD8",
+    "source": "pack",
+    "pack": "chroma",
+    "fanim": {
+      "type": "pulse",
+      "color": "#FF4FD8"
+    },
+    "v": 1794470706
+  },
+  {
+    "id": "20261112150506glas",
+    "file": "20261112150506glas.png",
+    "name": "Liquid Glass",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      60,
+      236,
+      960,
+      1236
+    ],
+    "board": [
+      96,
+      1540,
+      984,
+      1790
+    ],
+    "accent": "#BFF5FF",
+    "source": "pack",
+    "pack": "glass",
+    "fanim": {
+      "type": "sparkle",
+      "color": "#FFFFFF"
+    },
+    "v": 1794470706
+  },
+  {
+    "id": "20261112150506vhs",
+    "file": "20261112150506vhs.png",
+    "name": "VHS Retro",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      60,
+      236,
+      960,
+      1236
+    ],
+    "board": [
+      96,
+      1540,
+      984,
+      1790
+    ],
+    "accent": "#F3E3C3",
+    "source": "pack",
+    "pack": "vhs",
+    "fanim": {
+      "type": "scan",
+      "color": "#FFFFFF"
+    },
+    "v": 1794470747
+  },
+  {
+    "id": "20261112150506y2k",
+    "file": "20261112150506y2k.png",
+    "name": "Y2K Chrome",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      60,
+      236,
+      960,
+      1236
+    ],
+    "board": [
+      96,
+      1540,
+      984,
+      1790
+    ],
+    "accent": "#2B3A55",
+    "source": "pack",
+    "pack": "y2k",
+    "fanim": {
+      "type": "sparkle",
+      "color": "#FFFFFF"
+    },
+    "v": 1794470747
+  },
+  {
+    "id": "20261112150506mini",
+    "file": "20261112150506mini.png",
+    "name": "Minimal Neon",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      60,
+      236,
+      960,
+      1236
+    ],
+    "board": [
+      96,
+      1540,
+      984,
+      1790
+    ],
+    "accent": "#22F3FF",
+    "source": "pack",
+    "pack": "minimal",
+    "fanim": {
+      "type": "runner",
+      "color": "#22F3FF"
+    },
+    "v": 1794470706
+  },
+  {
+    "id": "202611122109435801",
+    "name": "Batu Lava Pixel",
+    "file": "202611122109435801.png",
+    "size": [
+      1080,
+      1920
+    ],
+    "win": [
+      164,
+      176,
+      756,
+      1016
+    ]
+  }
+]

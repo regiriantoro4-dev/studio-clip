@@ -1,0 +1,26 @@
+{
+ "font_kategori": [
+  "berita",
+  "komik",
+  "lucu",
+  "tangan",
+  "script",
+  "elegan",
+  "retro",
+  "futuristik",
+  "user",
+  "tebal",
+  "horor"
+ ],
+ "gaya_grup": [
+  "tiktok",
+  "klasik",
+  "real",
+  "new"
+ ],
+ "animasi_muncul": true,
+ "gerakan": true,
+ "bingkai": true,
+ "warna_brand": false,
+ "anti_kembar": 30
+}
