@@ -1,0 +1,5 @@
+# Venv terpisah untuk pemeriksa narasi (periksa_narasi.py), dibuat oleh setup.bat / setup.sh:
+#   tools/animasi-3d/.venv-asr
+# Model Whisper "small" diunduh otomatis saat pertama dipakai (~460 MB). Jalan di CPU (int8).
+faster-whisper>=1.2.1
+numpy>=2.0

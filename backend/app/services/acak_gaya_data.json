@@ -1,0 +1,868 @@
+{
+ "styles": [
+  {
+   "id": "plain",
+   "name": "Polos",
+   "group": "klasik",
+   "fx": {}
+  },
+  {
+   "id": "gold3d",
+   "name": "Emas 3D",
+   "group": "klasik",
+   "fx": {
+    "color": "#FFF1A8",
+    "fill2": "#B8860B",
+    "shine": true,
+    "stroke": "#5A3A00",
+    "strokeWidth": 3,
+    "depth": 10,
+    "depthColor": "#4A2C00",
+    "depthAngle": 90,
+    "shadowColor": "#000000",
+    "shadowBlur": 18,
+    "shadowY": 6
+   }
+  },
+  {
+   "id": "chrome",
+   "name": "Krom 3D",
+   "group": "klasik",
+   "fx": {
+    "color": "#FFFFFF",
+    "fill2": "#5B6270",
+    "shine": true,
+    "stroke": "#111111",
+    "strokeWidth": 3,
+    "depth": 7,
+    "depthColor": "#1C1F26",
+    "depthAngle": 90,
+    "shadowColor": "#000000",
+    "shadowBlur": 14,
+    "shadowY": 4
+   }
+  },
+  {
+   "id": "retro",
+   "name": "Retro 3D",
+   "group": "klasik",
+   "fx": {
+    "color": "#FFD100",
+    "stroke": "#000000",
+    "strokeWidth": 4,
+    "depth": 16,
+    "depthColor": "#E4007C",
+    "depthAngle": 45,
+    "outline2": "#000000",
+    "outline2Width": 4
+   }
+  },
+  {
+   "id": "neon",
+   "name": "Neon",
+   "group": "klasik",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "@accent",
+    "strokeWidth": 4,
+    "glow": "@accent",
+    "glowSize": 40
+   }
+  },
+  {
+   "id": "fire",
+   "name": "Api",
+   "group": "klasik",
+   "fx": {
+    "color": "#FFF59D",
+    "fill2": "#FF3D00",
+    "stroke": "#6D0F00",
+    "strokeWidth": 3,
+    "glow": "#FF6D00",
+    "glowSize": 32
+   }
+  },
+  {
+   "id": "ice",
+   "name": "Es",
+   "group": "klasik",
+   "fx": {
+    "color": "#F2FCFF",
+    "fill2": "#29B6F6",
+    "stroke": "#01579B",
+    "strokeWidth": 3,
+    "glow": "#80D8FF",
+    "glowSize": 26
+   }
+  },
+  {
+   "id": "sticker",
+   "name": "Stiker komik",
+   "group": "klasik",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "#000000",
+    "strokeWidth": 5,
+    "outline2": "#FFD100",
+    "outline2Width": 7,
+    "depth": 9,
+    "depthColor": "#000000",
+    "depthAngle": 60
+   }
+  },
+  {
+   "id": "block",
+   "name": "Blok tebal",
+   "group": "klasik",
+   "fx": {
+    "color": "@text",
+    "stroke": "",
+    "strokeWidth": 0,
+    "depth": 22,
+    "depthColor": "@primary",
+    "depthAngle": 135
+   }
+  },
+  {
+   "id": "gold_real",
+   "name": "Emas mewah",
+   "group": "real",
+   "fx": {
+    "color": "#FFF4C2",
+    "fill2": "#A8730F",
+    "shine": true,
+    "stroke": "#3D2600",
+    "strokeWidth": 5,
+    "depth": 14,
+    "depthColor": "#241400",
+    "depthColor2": "#A06C14",
+    "depthAngle": 90,
+    "shadowColor": "#000000",
+    "shadowBlur": 22,
+    "shadowY": 8,
+    "bevel": 10,
+    "bevelStrength": 80,
+    "lightAngle": 240,
+    "texture": "brushed",
+    "textureStrength": 40
+   }
+  },
+  {
+   "id": "chrome_real",
+   "name": "Krom mewah",
+   "group": "real",
+   "fx": {
+    "color": "#FFFFFF",
+    "fill2": "#4A5160",
+    "shine": true,
+    "stroke": "#0D0F14",
+    "strokeWidth": 4,
+    "depth": 12,
+    "depthColor": "#0A0C10",
+    "depthColor2": "#6B7385",
+    "depthAngle": 90,
+    "shadowColor": "#000000",
+    "shadowBlur": 18,
+    "shadowY": 6,
+    "bevel": 9,
+    "bevelStrength": 85,
+    "lightAngle": 240,
+    "texture": "brushed",
+    "textureStrength": 55
+   }
+  },
+  {
+   "id": "glitter",
+   "name": "Emas glitter",
+   "group": "real",
+   "fx": {
+    "color": "#FFE27A",
+    "fill2": "#C9A227",
+    "stroke": "#3B2A00",
+    "strokeWidth": 4,
+    "depth": 10,
+    "depthColor": "#2A1D00",
+    "depthColor2": "#8C6A10",
+    "depthAngle": 90,
+    "shadowColor": "#000000",
+    "shadowBlur": 16,
+    "shadowY": 6,
+    "bevel": 7,
+    "bevelStrength": 70,
+    "lightAngle": 240,
+    "texture": "glitter",
+    "textureStrength": 80
+   }
+  },
+  {
+   "id": "ruby",
+   "name": "Ruby kilap",
+   "group": "real",
+   "fx": {
+    "color": "#FF4D6D",
+    "fill2": "#7A0019",
+    "stroke": "#2B0008",
+    "strokeWidth": 4,
+    "depth": 12,
+    "depthColor": "#2B0008",
+    "depthColor2": "#A3132F",
+    "depthAngle": 100,
+    "shadowColor": "#000000",
+    "shadowBlur": 20,
+    "shadowY": 8,
+    "bevel": 12,
+    "bevelStrength": 75,
+    "lightAngle": 240,
+    "gloss": true
+   }
+  },
+  {
+   "id": "jelly",
+   "name": "Permen jelly",
+   "group": "real",
+   "fx": {
+    "color": "#7CFFB2",
+    "fill2": "#00A86B",
+    "stroke": "#003D24",
+    "strokeWidth": 4,
+    "depth": 10,
+    "depthColor": "#00261A",
+    "depthColor2": "#00804F",
+    "depthAngle": 90,
+    "shadowColor": "#000000",
+    "shadowBlur": 18,
+    "shadowY": 6,
+    "bevel": 14,
+    "bevelStrength": 70,
+    "lightAngle": 240,
+    "gloss": true
+   }
+  },
+  {
+   "id": "stone",
+   "name": "Batu pahat",
+   "group": "real",
+   "fx": {
+    "color": "#C9C7BD",
+    "fill2": "#6E6C64",
+    "stroke": "#2A2926",
+    "strokeWidth": 3,
+    "depth": 12,
+    "depthColor": "#1A1A18",
+    "depthColor2": "#5A5850",
+    "depthAngle": 90,
+    "shadowColor": "#000000",
+    "shadowBlur": 16,
+    "shadowY": 6,
+    "bevel": 6,
+    "bevelStrength": 90,
+    "lightAngle": 240,
+    "texture": "grain",
+    "textureStrength": 70
+   }
+  },
+  {
+   "id": "glitch",
+   "name": "Glitch RGB",
+   "group": "new",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "#000000",
+    "strokeWidth": 3,
+    "glitch": 7,
+    "glitchSlices": true,
+    "shadowColor": "#000000",
+    "shadowBlur": 10,
+    "shadowY": 4
+   }
+  },
+  {
+   "id": "neon_tube",
+   "name": "Neon tabung",
+   "group": "new",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "#FF2BD6",
+    "strokeWidth": 12,
+    "hollow": true,
+    "glow": "#FF2BD6",
+    "glowSize": 36
+   }
+  },
+  {
+   "id": "neon_tube_brand",
+   "name": "Neon tabung (aksen)",
+   "group": "new",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "@accent",
+    "strokeWidth": 12,
+    "hollow": true,
+    "glow": "@accent",
+    "glowSize": 36
+   }
+  },
+  {
+   "id": "puffy",
+   "name": "Gembung",
+   "group": "new",
+   "fx": {
+    "color": "#FF7AC6",
+    "fill2": "#C2187A",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 10,
+    "bevel": 22,
+    "bevelStrength": 85,
+    "lightAngle": 240,
+    "gloss": true,
+    "depth": 8,
+    "depthColor": "#7A0E4A",
+    "depthAngle": 90,
+    "shadowColor": "#000000",
+    "shadowBlur": 16,
+    "shadowY": 6
+   }
+  },
+  {
+   "id": "y2k",
+   "name": "Krom Y2K",
+   "group": "new",
+   "fx": {
+    "color": "#CFE8FF",
+    "fill2": "#1B2B4A",
+    "gradType": "chrome",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 3,
+    "outline2": "#0A0F1E",
+    "outline2Width": 4,
+    "bevel": 5,
+    "bevelStrength": 70,
+    "lightAngle": 240,
+    "glow": "#9AD8FF",
+    "glowSize": 20
+   }
+  },
+  {
+   "id": "holo",
+   "name": "Hologram",
+   "group": "new",
+   "fx": {
+    "color": "#FFFFFF",
+    "gradType": "holo",
+    "stroke": "#3A2A6A",
+    "strokeWidth": 4,
+    "gloss": true,
+    "depth": 6,
+    "depthColor": "#2A1A4A",
+    "depthAngle": 90
+   }
+  },
+  {
+   "id": "ombre",
+   "name": "Ombre senja",
+   "group": "new",
+   "fx": {
+    "color": "#FF6B6B",
+    "fill2": "#7A5CFF",
+    "gradType": "horizontal",
+    "stroke": "#1A1030",
+    "strokeWidth": 4,
+    "depth": 8,
+    "depthColor": "#1A1030",
+    "depthAngle": 90
+   }
+  },
+  {
+   "id": "tri",
+   "name": "Tiga warna",
+   "group": "new",
+   "fx": {
+    "color": "#00E5FF",
+    "fill3": "#7C4DFF",
+    "fill2": "#FF4081",
+    "gradType": "tri",
+    "stroke": "#0D0820",
+    "strokeWidth": 4,
+    "depth": 6,
+    "depthColor": "#0D0820",
+    "depthAngle": 90
+   }
+  },
+  {
+   "id": "soft",
+   "name": "Bayangan lembut",
+   "group": "klasik",
+   "fx": {
+    "shadowColor": "#000000",
+    "shadowBlur": 28,
+    "shadowX": 0,
+    "shadowY": 10
+   }
+  },
+  {
+   "id": "cap_white",
+   "name": "Caption TikTok",
+   "group": "tiktok",
+   "fx": {
+    "color": "#111111",
+    "lineBox": "box",
+    "lineBoxColor": "#FFFFFF",
+    "lineBoxPad": 30,
+    "lineBoxRadius": 35
+   }
+  },
+  {
+   "id": "cap_dark",
+   "name": "Caption gelap",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "lineBox": "box",
+    "lineBoxColor": "#000000",
+    "lineBoxOpacity": 72,
+    "lineBoxPad": 28,
+    "lineBoxRadius": 30
+   }
+  },
+  {
+   "id": "cap_yellow",
+   "name": "Caption kuning",
+   "group": "tiktok",
+   "fx": {
+    "color": "#111111",
+    "lineBox": "box",
+    "lineBoxColor": "#FFE14D",
+    "lineBoxPad": 30,
+    "lineBoxRadius": 30
+   }
+  },
+  {
+   "id": "cap_brand",
+   "name": "Caption warna brand",
+   "group": "tiktok",
+   "fx": {
+    "color": "@primary",
+    "lineBox": "box",
+    "lineBoxColor": "@accent",
+    "lineBoxPad": 30,
+    "lineBoxRadius": 30
+   }
+  },
+  {
+   "id": "news_red",
+   "name": "Label berita",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "lineBox": "box",
+    "lineBoxColor": "#E50914",
+    "lineBoxPad": 22,
+    "lineBoxRadius": 0,
+    "shadowColor": "#000000",
+    "shadowBlur": 12,
+    "shadowY": 4
+   }
+  },
+  {
+   "id": "cap_keyword",
+   "name": "Caption + kata merah",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "lineBox": "box",
+    "lineBoxColor": "#000000",
+    "lineBoxOpacity": 80,
+    "lineBoxPad": 28,
+    "lineBoxRadius": 30,
+    "hlColor": "#FF3B3B",
+    "hlAuto": "longest"
+   }
+  },
+  {
+   "id": "hl_yellow",
+   "name": "Sorot kata kuning",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "#000000",
+    "strokeWidth": 7,
+    "hlColor": "#FFE14D",
+    "hlAuto": "last",
+    "shadowColor": "#000000",
+    "shadowBlur": 14,
+    "shadowY": 5
+   }
+  },
+  {
+   "id": "hl_box",
+   "name": "Sorot kata berkotak",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "#000000",
+    "strokeWidth": 6,
+    "hlColor": "#111111",
+    "hlBg": "#FFE14D",
+    "hlAuto": "last"
+   }
+  },
+  {
+   "id": "hl_green",
+   "name": "Sorot kata hijau",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "#000000",
+    "strokeWidth": 7,
+    "hlColor": "#3CFF6B",
+    "hlAuto": "first"
+   }
+  },
+  {
+   "id": "marker_y",
+   "name": "Stabilo kuning",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "#111111",
+    "strokeWidth": 5,
+    "marker": "#FFD000"
+   }
+  },
+  {
+   "id": "marker_p",
+   "name": "Stabilo pink",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "#2A0016",
+    "strokeWidth": 5,
+    "marker": "#FF3EA5"
+   }
+  },
+  {
+   "id": "long_dark",
+   "name": "Bayangan panjang",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "longShadow": 140,
+    "longColor": "#000000",
+    "longAngle": 45,
+    "longFade": true
+   }
+  },
+  {
+   "id": "long_retro",
+   "name": "Retro bayangan panjang",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFD100",
+    "stroke": "#000000",
+    "strokeWidth": 3,
+    "longShadow": 120,
+    "longColor": "#E4007C",
+    "longAngle": 45
+   }
+  },
+  {
+   "id": "long_brand",
+   "name": "Bayangan panjang brand",
+   "group": "tiktok",
+   "fx": {
+    "color": "@text",
+    "longShadow": 120,
+    "longColor": "@primary",
+    "longAngle": 135,
+    "longFade": true
+   }
+  },
+  {
+   "id": "arc_up",
+   "name": "Lengkung pelangi",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "#000000",
+    "strokeWidth": 7,
+    "curve": 45,
+    "shadowColor": "#000000",
+    "shadowBlur": 14,
+    "shadowY": 6
+   }
+  },
+  {
+   "id": "arc_smile",
+   "name": "Lengkung senyum",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFD100",
+    "stroke": "#000000",
+    "strokeWidth": 7,
+    "curve": -45,
+    "depth": 8,
+    "depthColor": "#000000",
+    "depthAngle": 90
+   }
+  },
+  {
+   "id": "die_cut",
+   "name": "Stiker potong",
+   "group": "tiktok",
+   "fx": {
+    "color": "#111111",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 20,
+    "shadowColor": "#000000",
+    "shadowBlur": 16,
+    "shadowY": 6
+   }
+  },
+  {
+   "id": "meme",
+   "name": "Meme klasik",
+   "group": "tiktok",
+   "fx": {
+    "color": "#FFFFFF",
+    "stroke": "#000000",
+    "strokeWidth": 10
+   }
+  }
+ ],
+ "anims": [
+  [
+   "float",
+   "Melayang"
+  ],
+  [
+   "wobble",
+   "Goyang"
+  ],
+  [
+   "pulse",
+   "Denyut"
+  ],
+  [
+   "shine",
+   "Kilau berjalan"
+  ],
+  [
+   "wave",
+   "Gelombang per huruf"
+  ],
+  [
+   "bounce",
+   "Lompat bergantian"
+  ],
+  [
+   "flicker",
+   "Neon berkedip"
+  ],
+  [
+   "glitch",
+   "Glitch berkala"
+  ],
+  [
+   "shake",
+   "Getar / gemetar"
+  ],
+  [
+   "jitter",
+   "Huruf bergetar acak (horor)"
+  ],
+  [
+   "heartbeat",
+   "Detak jantung"
+  ],
+  [
+   "swing",
+   "Ayun bandul"
+  ],
+  [
+   "jelly",
+   "Jelly kenyal"
+  ],
+  [
+   "tada",
+   "Tada! (perhatian)"
+  ],
+  [
+   "breathe",
+   "Cahaya bernapas"
+  ],
+  [
+   "rainbow",
+   "Warna pelangi berjalan"
+  ],
+  [
+   "beat",
+   "Zoom ikut ketukan"
+  ],
+  [
+   "flip3d",
+   "Balik 3D berkala"
+  ]
+ ],
+ "anim_ins": [
+  [
+   "pop",
+   "Pop-in"
+  ],
+  [
+   "slide",
+   "Masuk dari samping"
+  ],
+  [
+   "glitchin",
+   "Glitch masuk"
+  ],
+  [
+   "type",
+   "Ketik huruf satu-satu"
+  ],
+  [
+   "letters",
+   "Huruf pop bergiliran"
+  ],
+  [
+   "assemble",
+   "Pecah lalu menyatu"
+  ],
+  [
+   "words",
+   "Kata per kata (gaya TikTok)"
+  ],
+  [
+   "drop",
+   "Jatuh lalu memantul"
+  ],
+  [
+   "zoomin",
+   "Zoom dari besar (hentak)"
+  ],
+  [
+   "blurin",
+   "Blur jadi fokus"
+  ],
+  [
+   "slideup",
+   "Masuk dari bawah"
+  ],
+  [
+   "slidedown",
+   "Masuk dari atas"
+  ],
+  [
+   "slideright",
+   "Masuk dari kanan"
+  ],
+  [
+   "wipe",
+   "Sapuan kiri ke kanan"
+  ],
+  [
+   "spinin",
+   "Putar masuk"
+  ],
+  [
+   "flip",
+   "Balik 3D masuk"
+  ],
+  [
+   "rubber",
+   "Membal kenyal"
+  ],
+  [
+   "neonon",
+   "Neon menyala tersendat"
+  ]
+ ],
+ "borders": [
+  [
+   "",
+   "Garis polos"
+  ],
+  [
+   "dashed",
+   "Garis putus-putus"
+  ],
+  [
+   "dotted",
+   "Titik-titik"
+  ],
+  [
+   "double",
+   "Garis ganda"
+  ],
+  [
+   "gradient",
+   "Garis gradasi"
+  ],
+  [
+   "neon2",
+   "Neon ganda"
+  ],
+  [
+   "corners",
+   "Sudut bidik kamera"
+  ],
+  [
+   "film",
+   "Pita film"
+  ],
+  [
+   "polaroid",
+   "Polaroid"
+  ],
+  [
+   "torn",
+   "Kertas sobek"
+  ],
+  [
+   "tape",
+   "Selotip di sudut"
+  ]
+ ],
+ "fx_none": {
+  "fill2": "",
+  "shine": false,
+  "depth": 0,
+  "depthColor": "#000000",
+  "depthAngle": 45,
+  "shadowColor": "",
+  "shadowBlur": 20,
+  "shadowX": 0,
+  "shadowY": 8,
+  "glow": "",
+  "glowSize": 30,
+  "outline2": "",
+  "outline2Width": 0,
+  "depthColor2": "",
+  "bevel": 0,
+  "bevelStrength": 70,
+  "lightAngle": 240,
+  "texture": "",
+  "textureStrength": 60,
+  "gloss": false,
+  "gradType": "",
+  "fill3": "",
+  "hollow": false,
+  "glitch": 0,
+  "glitchSlices": false,
+  "lineBox": "",
+  "lineBoxColor": "#FFFFFF",
+  "lineBoxPad": 30,
+  "lineBoxRadius": 30,
+  "lineBoxOpacity": 100,
+  "marker": "",
+  "hlWords": "",
+  "hlAuto": "",
+  "hlColor": "",
+  "hlBg": "",
+  "longShadow": 0,
+  "longColor": "#000000",
+  "longAngle": 45,
+  "longFade": false,
+  "curve": 0
+ }
+}

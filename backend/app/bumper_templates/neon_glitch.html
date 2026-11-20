@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id" data-composition-variables='[
+  {"id":"brand","type":"string","label":"Teks utama","default":"KOPLO77"},
+  {"id":"tagline","type":"string","label":"Tagline","default":"GAMING HIGHLIGHT"},
+  {"id":"pos","type":"string","label":"Posisi di layar","default":"tengah","options":[["atas","Atas"],["tengah","Tengah"],["bawah","Bawah"]]},
+  {"id":"size","type":"string","label":"Ukuran teks","default":"100","options":[["80","Kecil"],["100","Normal"],["120","Besar"]]},
+  {"id":"c1","type":"color","label":"Warna neon","default":"#FF2BD6"},
+  {"id":"c2","type":"color","label":"Warna neon kedua","default":"#22E5FF"},
+  {"id":"c3","type":"color","label":"Warna inti","default":"#FFFFFF"},
+  {"id":"glow","type":"color","label":"Cahaya","default":"#FF2BD6"}
+]'>
+<head>
+  <meta charset="utf-8" />
+  <script src="vendor/gsap.min.js"></script>
+  <style>
+    html, body { margin: 0; background: transparent; }
+    #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+    .center { position: absolute; left: 0; top: 760px; width: 1080px; height: 400px; }
+    .t { position: absolute; left: 0; top: 0; width: 1080px; text-align: center; white-space: nowrap; font: 400 200px/1.2 "BrandFont", sans-serif; }
+    .tag { position: absolute; left: 0; top: 270px; width: 1080px; text-align: center; font: 400 50px/1 "TagFont", sans-serif; letter-spacing: 14px; white-space: nowrap; }
+    .scan { position: absolute; left: 0; width: 1080px; height: 14px; top: 0; }
+    .bars div { position: absolute; left: 0; height: 10px; }
+    .frame { position: absolute; left: 70px; top: -60px; width: 940px; height: 500px; border: 6px solid; border-radius: 26px; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="bumper" data-start="0" data-duration="2.4" data-width="1080" data-height="1920" data-fps="30">
+    <div class="center" id="center">
+      <div class="frame" id="frame"></div>
+      <div class="t" id="tr"></div>
+      <div class="t" id="tc"></div>
+      <div class="t" id="tm"></div>
+      <div class="tag" id="tag"></div>
+      <div class="bars" id="bars"></div>
+      <div class="scan" id="scan"></div>
+    </div>
+  </div>
+  <script>
+    const V = (window.__hyperframes && window.__hyperframes.getVariables()) || {}
+    const S = Math.max(0.6, Math.min(1.4, (parseFloat(V.size) || 100) / 100))
+    document.getElementById('center').style.top = (V.pos === 'atas' ? 400 : V.pos === 'bawah' ? 1180 : 760) + 'px'
+    const brand = String(V.brand || 'KOPLO77').toUpperCase()
+    const c1 = V.c1 || '#FF2BD6', c2 = V.c2 || '#22E5FF', c3 = V.c3 || '#FFFFFF', glow = V.glow || c1
+    const el = (id) => document.getElementById(id)
+    el('tm').textContent = brand; el('tr').textContent = brand; el('tc').textContent = brand
+    el('tm').style.color = c3
+    el('tm').style.textShadow = `0 0 6px ${c3}, 0 0 18px ${c1}, 0 0 40px ${c1}, 0 0 80px ${glow}`
+    el('tm').style.webkitTextStroke = `3px ${c1}`
+    el('tr').style.color = c1; el('tc').style.color = c2
+    el('tr').style.opacity = 0.85; el('tc').style.opacity = 0.85
+    el('tr').style.mixBlendMode = 'screen'; el('tc').style.mixBlendMode = 'screen'
+    el('tag').textContent = String(V.tagline || '').toUpperCase(); el('tag').style.color = c3
+    el('tag').style.textShadow = `0 0 10px ${c2}, 0 0 26px ${c2}`
+    el('frame').style.borderColor = c2; el('frame').style.boxShadow = `0 0 24px ${c2}, inset 0 0 24px ${c2}`
+    el('scan').style.background = `linear-gradient(180deg, transparent, ${c3}, transparent)`
+    const bars = el('bars')
+    const Y = [40, 120, 175, 230, 300]
+    Y.forEach((y, i) => { const d = document.createElement('div'); d.style.top = y + 'px'; d.style.width = (300 + i * 110) + 'px'; d.style.background = i % 2 ? c1 : c2; bars.appendChild(d) })
+
+    function fit() {
+      ['tm', 'tr', 'tc'].forEach((id) => { el(id).style.fontSize = 200 * S + 'px' }); el('tag').style.fontSize = 50 * S + 'px'
+      const k = Math.min(1, 980 / Math.max(1, el('tm').scrollWidth))
+      if (k < 1) ['tm', 'tr', 'tc'].forEach((id) => { el(id).style.fontSize = 200 * S * k + 'px' })
+      const kt = Math.min(1, 980 / Math.max(1, el('tag').scrollWidth))
+      if (kt < 1) el('tag').style.fontSize = 50 * S * kt + 'px'
+    }
+    function build() {
+      fit()
+      const tl = gsap.timeline({ paused: true })
+      // glitch masuk: salinan merah/cyan bergeser, kedip on/off
+      const jit = [[-26, 14], [22, -10], [-12, 6], [30, -16], [-8, 4], [0, 0]]
+      jit.forEach(([a, b], i) => {
+        const t = i * 0.05
+        tl.set('#tr', { x: a, y: b * 0.4 }, t).set('#tc', { x: -a, y: -b * 0.4 }, t)
+          .set('#tm', { opacity: i % 2 ? 0.25 : 1, skewX: i % 2 ? a * 0.5 : 0 }, t)
+      })
+      tl.fromTo('#center', { scaleY: 0.02, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.12, ease: 'power4.out' }, 0)
+      gsap.utils.toArray('#bars div').forEach((d, i) => {
+        tl.fromTo(d, { x: i % 2 ? 1080 : -600, opacity: 0.9 }, { x: i % 2 ? -600 : 1080, opacity: 0, duration: 0.28, ease: 'none' }, 0.02 + i * 0.03)
+      })
+      tl.fromTo('#scan', { y: -80 }, { y: 480, duration: 0.6, ease: 'power1.inOut' }, 0.15)
+        .fromTo('#frame', { scale: 1.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: 'back.out(1.6)' }, 0.25)
+        .fromTo('#tag', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out' }, 0.5)
+        // kedip neon sesekali saat diam
+        .set('#tm', { opacity: 0.35 }, 1.25).set('#tm', { opacity: 1 }, 1.3).set('#tm', { opacity: 0.5 }, 1.36).set('#tm', { opacity: 1 }, 1.4)
+        .set('#tr', { x: -14 }, 1.6).set('#tc', { x: 14 }, 1.6).set('#tr', { x: 0 }, 1.68).set('#tc', { x: 0 }, 1.68)
+        // glitch keluar
+        .set('#tr', { x: 34 }, 2.05).set('#tc', { x: -34 }, 2.05)
+        .to('#center', { scaleY: 0.02, opacity: 0, duration: 0.18, ease: 'power4.in' }, 2.15)
+      window.__timelines = window.__timelines || {}
+      window.__timelines.bumper = tl
+    }
+    const f1 = new FontFace('BrandFont', 'url(fonts/brand.ttf)'), f2 = new FontFace('TagFont', 'url(fonts/tag.ttf)')
+    Promise.all([f1.load(), f2.load()]).then((fs) => { fs.forEach((f) => document.fonts.add(f)); build() }, build)
+  </script>
+</body>
+</html>

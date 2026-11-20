@@ -1,0 +1,11 @@
+fastapi>=0.111
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+requests>=2.32
+yt-dlp>=2024.8.6
+pillow>=10.0
+edge-tts>=6.1
+anthropic>=2.8
+
+# Opsional — transkripsi lokal tanpa API key (unduh model saat pertama dipakai):
+# faster-whisper>=1.0.3

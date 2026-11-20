@@ -1,0 +1,42 @@
+/* Tahap 4: Acak gaya (Frame Studio) + panel aturan acak */
+.ag-bar {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 8px 14px; background: var(--panel); border-bottom: 1px solid var(--line2);
+}
+.ag-main, .ag-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-width: 0; }
+.ag-sub .hint { margin: 0; }
+.ag-lbl { font-size: 12px; color: var(--muted); }
+.ag-sep { width: 1px; height: 22px; background: var(--line2); }
+.ag-kode {
+  font-family: ui-monospace, Consolas, monospace; font-size: 13px; font-weight: 700; letter-spacing: 1px;
+  color: var(--accent); border: 1px dashed var(--line2); border-radius: 6px; padding: 3px 8px; user-select: all;
+}
+.ag-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.ag-chip {
+  font: inherit; font-size: 12px; color: var(--text); cursor: pointer; min-height: 30px;
+  background: transparent; border: 1px solid var(--line2); border-radius: 999px; padding: 4px 10px;
+}
+.ag-chip small { color: var(--muted); margin-left: 2px; }
+.ag-chip:hover { border-color: var(--accent); }
+.ag-chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ag-chip.is-on { background: var(--accent); border-color: var(--accent); color: #111; }
+.ag-chip.is-on small { color: #333; }
+.ag-chip.is-lock { background: var(--panel2); border-color: var(--accent); color: var(--accent); }
+.ag-kodeform { display: flex; gap: 4px; align-items: center; }
+.ag-kodeform .input { width: 78px; min-height: 30px; padding: 4px 8px; text-transform: uppercase; font-family: ui-monospace, Consolas, monospace; }
+.ag-semua { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--muted); cursor: pointer; }
+.ag-err { color: #ff8a80; font-size: 12.5px; }
+
+.ag-rules {
+  display: flex; flex-direction: column; gap: 10px; padding: 10px 12px; margin-top: 2px;
+  background: var(--panel2); border: 1px solid var(--line2); border-radius: 8px;
+}
+.ag-rule-row { display: flex; flex-direction: column; gap: 6px; }
+.ag-rule-row .hint { margin: 0; }
+.ag-checks { flex-direction: row; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; }
+.ag-checks label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.ag-num .input { width: 70px; min-height: 30px; padding: 4px 8px; }
+
+@media (max-width: 720px) {
+  .ag-sep { display: none; }
+}

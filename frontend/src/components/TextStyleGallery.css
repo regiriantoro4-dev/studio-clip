@@ -1,0 +1,27 @@
+/* Galeri gaya teks bergambar — inspector Frame Studio */
+.tsg-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+.tsg-tab {
+  font: inherit; font-size: 12px; color: var(--text); cursor: pointer;
+  background: transparent; border: 1px solid var(--line2); border-radius: 999px; padding: 4px 10px; min-height: 30px;
+}
+.tsg-tab small { color: var(--muted); margin-left: 2px; }
+.tsg-tab.is-on { background: var(--accent); border-color: var(--accent); color: #111; }
+.tsg-tab.is-on small { color: #333; }
+.tsg-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.tsg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; max-height: 360px; overflow-y: auto; }
+.tsg-item {
+  font: inherit; color: var(--text); cursor: pointer; text-align: center; min-width: 0;
+  display: flex; flex-direction: column; gap: 4px; align-items: stretch;
+  background: var(--panel2); border: 1px solid var(--line2); border-radius: 8px; padding: 6px;
+}
+.tsg-item:hover { border-color: var(--accent); }
+.tsg-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+/* latar kotak-kotak abu: gaya terang & gelap sama-sama terlihat */
+.tsg-img {
+  height: 54px; display: flex; align-items: center; justify-content: center; border-radius: 5px; overflow: hidden;
+  background: #3a3d45 repeating-conic-gradient(#33363d 0 25%, #3a3d45 0 50%) 0 0 / 14px 14px;
+}
+.tsg-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.tsg-ph { color: #8a8c96; font-weight: 700; }
+.tsg-name { font-size: 11.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

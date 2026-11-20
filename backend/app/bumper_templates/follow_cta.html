@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="id" data-composition-variables='[
+  {"id":"brand","type":"string","label":"Teks utama","default":"KOPLO77"},
+  {"id":"tagline","type":"string","label":"Ajakan (tombol)","default":"FOLLOW"},
+  {"id":"handle","type":"string","label":"Handle / akun","default":"@koplo77"},
+  {"id":"pos","type":"string","label":"Posisi di layar","default":"tengah","options":[["atas","Atas"],["tengah","Tengah"],["bawah","Bawah"]]},
+  {"id":"size","type":"string","label":"Ukuran teks","default":"100","options":[["80","Kecil"],["100","Normal"],["120","Besar"]]},
+  {"id":"bell","type":"string","label":"Lonceng","default":"atas","options":[["atas","Di atas teks"],["pojok","Pojok kartu"],["tanpa","Tanpa lonceng"]]},
+  {"id":"c1","type":"color","label":"Warna tombol","default":"#FF2E63"},
+  {"id":"c2","type":"color","label":"Warna teks utama","default":"#FFFFFF"},
+  {"id":"c3","type":"color","label":"Warna gelap","default":"#111111"},
+  {"id":"glow","type":"color","label":"Aksen","default":"#FFD100"}
+]'>
+<head>
+  <meta charset="utf-8" />
+  <script src="vendor/gsap.min.js"></script>
+  <style>
+    html, body { margin: 0; background: transparent; }
+    #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+    .card { position: absolute; left: 110px; width: 860px; border-radius: 48px; }
+    .brand { position: absolute; left: 40px; width: 780px; text-align: center; font: 400 150px/1.1 "BrandFont", sans-serif; white-space: nowrap; }
+    .handle { position: absolute; left: 40px; width: 780px; text-align: center; font: 400 48px/1 "TagFont", sans-serif; white-space: nowrap; }
+    .btn, .btn2 { position: absolute; left: 180px; width: 500px; height: 140px; border-radius: 70px; display: grid; place-items: center;
+      font: 400 60px/1 "TagFont", sans-serif; letter-spacing: 6px; white-space: nowrap; }
+    .btn { color: #fff; }
+    .hand { position: absolute; width: 120px; height: 140px; }
+    .bell { position: absolute; width: 100px; height: 100px; }
+    .spark { position: absolute; width: 14px; height: 14px; margin: -7px; border-radius: 50%; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="bumper" data-start="0" data-duration="3" data-width="1080" data-height="1920" data-fps="30">
+    <div class="card" id="card">
+      <svg class="bell" id="bell" viewBox="0 0 100 100"><path id="bellp" d="M50 8c4 0 7 3 7 7v3c13 3 22 15 22 29v17l9 10v4H12v-4l9-10V47c0-14 9-26 22-29v-3c0-4 3-7 7-7zm-11 78h22a11 11 0 0 1-22 0z"/></svg>
+      <div class="brand" id="brand"></div>
+      <div class="handle" id="handle"></div>
+      <div class="btn" id="btn"></div>
+      <div class="btn2" id="btn2"></div>
+      <div id="sparks"></div>
+      <svg class="hand" id="hand" viewBox="0 0 60 70"><path fill="#fff" stroke="#111" stroke-width="3" d="M20 4c3 0 5 2 5 5v22l2-1c3-1 5 0 6 2 2-1 5 0 6 2 2-1 5 0 6 3v14c0 10-7 17-16 17h-4c-6 0-10-3-13-8L4 41c-2-3-1-6 2-7 2-1 5 0 6 2l3 4V9c0-3 2-5 5-5z"/></svg>
+    </div>
+  </div>
+  <script>
+    const V = (window.__hyperframes && window.__hyperframes.getVariables()) || {}
+    const c1 = V.c1 || '#FF2E63', c2 = V.c2 || '#FFFFFF', c3 = V.c3 || '#111111', glow = V.glow || '#FFD100'
+    const S = Math.max(0.6, Math.min(1.4, (parseFloat(V.size) || 100) / 100))
+    const bellMode = ['atas', 'pojok', 'tanpa'].includes(V.bell) ? V.bell : 'atas'
+    const el = (id) => document.getElementById(id)
+    const handleTxt = String(V.handle || '').trim()
+
+    el('card').style.background = `linear-gradient(160deg, ${c3}EE, ${c3}CC)`
+    el('card').style.boxShadow = `0 30px 80px rgba(0,0,0,.55), inset 0 0 0 4px ${glow}`
+    el('brand').textContent = String(V.brand || 'KOPLO77').toUpperCase(); el('brand').style.color = c2
+    el('brand').style.textShadow = `0 6px 0 ${c1}, 0 12px 24px rgba(0,0,0,.6)`
+    el('handle').textContent = handleTxt; el('handle').style.color = glow
+    el('btn').textContent = String(V.tagline || 'FOLLOW').toUpperCase(); el('btn').style.background = c1
+    el('btn').style.boxShadow = `0 10px 0 rgba(0,0,0,.35), 0 0 40px ${c1}`
+    el('btn2').textContent = '✓ ' + String(V.tagline || 'FOLLOW').toUpperCase()
+    el('btn2').style.background = '#2A2A2A'; el('btn2').style.color = c2; el('btn2').style.border = `4px solid ${glow}`
+    el('bellp').setAttribute('fill', glow)
+    if (bellMode === 'tanpa') el('bell').style.display = 'none'
+    if (!handleTxt) el('handle').style.display = 'none'
+
+    // tata letak bertumpuk: [lonceng] -> teks utama -> [handle] -> tombol, tanpa saling menimpa
+    function layout() {
+      const brand = el('brand'), handle = el('handle')
+      brand.style.fontSize = 150 * S + 'px'; handle.style.fontSize = 48 * S + 'px'
+      const kb = Math.min(1, 780 / Math.max(1, brand.scrollWidth)); if (kb < 1) brand.style.fontSize = 150 * S * kb + 'px'
+      const kh = Math.min(1, 780 / Math.max(1, handle.scrollWidth)); if (kh < 1) handle.style.fontSize = 48 * S * kh + 'px'
+      const btnW = Math.min(760, Math.max(420, el('btn').scrollWidth + 120))
+      ;['btn', 'btn2'].forEach((id) => { el(id).style.width = btnW + 'px'; el(id).style.left = (860 - btnW) / 2 + 'px' })
+      let y = 56
+      if (bellMode === 'atas') { el('bell').style.left = '380px'; el('bell').style.top = y + 'px'; y += 116 }
+      if (bellMode === 'pojok') { el('bell').style.left = '790px'; el('bell').style.top = '-40px' }  // di luar area teks
+      brand.style.top = y + 'px'; y += brand.offsetHeight + 14
+      if (handleTxt) { handle.style.top = y + 'px'; y += handle.offsetHeight + 34 } else { y += 24 }
+      el('btn').style.top = y + 'px'; el('btn2').style.top = y + 'px'
+      const btnTop = y
+      y += 140 + 60
+      const H = y
+      const top = V.pos === 'atas' ? 260 : V.pos === 'bawah' ? 1560 - H : 960 - H / 2
+      el('card').style.top = top + 'px'; el('card').style.height = H + 'px'
+      const bx = (860 - btnW) / 2
+      el('hand').style.left = bx + btnW - 120 + 'px'; el('hand').style.top = btnTop + 90 + 'px'
+      document.querySelectorAll('.spark').forEach((d) => { d.style.left = '430px'; d.style.top = btnTop + 70 + 'px' })
+    }
+    const sp = el('sparks')
+    for (let i = 0; i < 14; i++) { const d = document.createElement('div'); d.className = 'spark'; d.style.background = i % 2 ? glow : c1; sp.appendChild(d) }
+
+    function build() {
+      layout()
+      const tl = gsap.timeline({ paused: true })
+      tl.fromTo('#card', { y: 500, opacity: 0, rotation: -6 }, { y: 0, opacity: 1, rotation: 0, duration: 0.5, ease: 'back.out(1.5)' }, 0)
+        .fromTo('#brand', { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: 'back.out(2)' }, 0.25)
+        .fromTo('#handle', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: 'power3.out' }, 0.4)
+        .fromTo('#btn', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: 'back.out(2.4)' }, 0.5)
+        .set('#btn2', { opacity: 0, scale: 0.8 }, 0)
+        .fromTo('#bell', { scale: 0, rotation: 0 }, { scale: 1, duration: 0.3, ease: 'back.out(2)' }, 0.6)
+        .fromTo('#hand', { x: 260, y: 260, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.45, ease: 'power3.out' }, 0.9)
+        .to('#hand', { scale: 0.85, duration: 0.08, yoyo: true, repeat: 1 }, 1.38)
+        .to('#btn', { scale: 0.9, duration: 0.08, yoyo: true, repeat: 1 }, 1.38)
+        .to('#btn', { opacity: 0, duration: 0.1 }, 1.52)
+        .to('#btn2', { opacity: 1, scale: 1, duration: 0.3, ease: 'back.out(2.5)' }, 1.52)
+      gsap.utils.toArray('.spark').forEach((d, i) => {
+        const a = (i / 14) * Math.PI * 2
+        tl.fromTo(d, { x: 0, y: 0, opacity: 1, scale: 1.2 }, { x: Math.cos(a) * 330, y: Math.sin(a) * 150, opacity: 0, scale: 0.3, duration: 0.6, ease: 'power3.out' }, 1.52)
+      })
+      ;[16, -14, 10, -8, 5, 0].forEach((r, i) => tl.to('#bell', { rotation: r, duration: 0.07, ease: 'none' }, 1.7 + i * 0.07))
+      tl.to('#hand', { x: 200, y: 200, opacity: 0, duration: 0.35, ease: 'power2.in' }, 1.9)
+        .to('#card', { scale: 1.06, duration: 0.5, ease: 'none' }, 2.1)
+      window.__timelines = window.__timelines || {}
+      window.__timelines.bumper = tl
+    }
+    const f1 = new FontFace('BrandFont', 'url(fonts/brand.ttf)'), f2 = new FontFace('TagFont', 'url(fonts/tag.ttf)')
+    Promise.all([f1.load(), f2.load()]).then((fs) => { fs.forEach((f) => document.fonts.add(f)); build() }, build)
+  </script>
+</body>
+</html>

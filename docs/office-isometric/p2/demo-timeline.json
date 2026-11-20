@@ -1,0 +1,400 @@
+{
+ "scenario": "demo",
+ "base": "http://127.0.0.1:8000",
+ "hasCanvas": true,
+ "tabs": [
+  "Kantor",
+  "3D Isometrik*",
+  "Balok",
+  "Tabel"
+ ],
+ "timeline": [
+  {
+   "t": 0,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.48353763572426,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 1,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.479740681165715,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 2,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.46456055105641,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 3,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.48353763572426,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 4,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.50253395522353,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 5,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.513940991698064,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 6,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.99548161851842,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 7,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.543018041272525,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 8,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.98377989962673,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 9,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.48353763515841,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 10,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.48353763515841,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 11,
+   "key": "consulting/walk/go",
+   "fps": 40.06163328197227,
+   "target": 60,
+   "calls": 37,
+   "unit": "active"
+  },
+  {
+   "t": 12,
+   "key": "consulting/walk/go",
+   "fps": 74.9367088607595,
+   "target": 60,
+   "calls": 37,
+   "unit": "active"
+  },
+  {
+   "t": 13,
+   "key": "consulting/idle/at",
+   "fps": 74.95188898927024,
+   "target": 60,
+   "calls": 37,
+   "unit": "active"
+  },
+  {
+   "t": 14,
+   "key": "working/walk/back",
+   "fps": 74.98226770650834,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 15,
+   "key": "working/walk/back",
+   "fps": 75.01267105930056,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 16,
+   "key": "working/working/seat",
+   "fps": 74.95948136119996,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 17,
+   "key": "working/working/seat",
+   "fps": 74.97467071935156,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 18,
+   "key": "working/working/seat",
+   "fps": 74.96707527031683,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 19,
+   "key": "working/working/seat",
+   "fps": 74.98226770764049,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 20,
+   "key": "working/working/seat",
+   "fps": 75,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 21,
+   "key": "working/working/seat",
+   "fps": 75.01267105930056,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 22,
+   "key": "working/working/seat",
+   "fps": 74.97467071935156,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 23,
+   "key": "working/working/seat",
+   "fps": 74.96707527031683,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 24,
+   "key": "working/working/seat",
+   "fps": 74.96707527031683,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 25,
+   "key": "working/working/seat",
+   "fps": 74.98986623451914,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 26,
+   "key": "working/working/seat",
+   "fps": 74.98226770650834,
+   "target": 60,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 27,
+   "key": "idle/seated-idle/seat",
+   "fps": 53.692634991713135,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 28,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.50253395522353,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 29,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.48353763572426,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 30,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.48733535967578,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 31,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.47974068059998,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 32,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.43423715072529,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 33,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.44181339798463,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 34,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.45697509628633,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 35,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.55201461495171,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 36,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.491133853820244,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 37,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.48733535967578,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 38,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.52154953881315,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 39,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.513940991698064,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 40,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.48353763572426,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 41,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.48353763572426,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 42,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.46456055105641,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  },
+  {
+   "t": 43,
+   "key": "idle/seated-idle/seat",
+   "fps": 37.48353763515841,
+   "target": 30,
+   "calls": 37,
+   "unit": "idle"
+  }
+ ],
+ "states": [
+  "idle/seated-idle/seat",
+  "consulting/walk/go",
+  "consulting/idle/at",
+  "working/walk/back",
+  "working/working/seat"
+ ],
+ "final": {
+  "stats": {
+   "fpsTarget": 30,
+   "displayHz": 74.62686567164192,
+   "divisor": 2,
+   "fps": 37.50253395522353,
+   "frameMs": 26.66486486470377,
+   "frameMsMax": 28.400000005960464,
+   "cpuMs": 0.4966666671137015,
+   "calls": 37,
+   "triangles": 3047,
+   "geometries": 37,
+   "textures": 4,
+   "frames": 2435,
+   "hidden": false
+  },
+  "emp": {
+   "state": "idle",
+   "shown": "idle",
+   "clip": "seated-idle",
+   "phase": "seat",
+   "dist": 0,
+   "x": -0.85,
+   "z": 0.02
+  },
+  "draws": 91176
+ },
+ "errors": []
+}

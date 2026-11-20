@@ -1,0 +1,63 @@
+# ==== Studio Clip (auto-clipper) ====
+# Repo ini WAJIB privat. API key hanya ada di backend/data/settings.json (tidak ikut).
+
+# --- Rahasia ---
+.env
+.env.*
+!.env.example
+**/settings.json
+!backend/settings.example.json
+.claude/settings.local.json
+
+# --- Data kerja app (bawa lewat flashdisk/SSD, lihat PINDAH-KE-MAC.md bagian 5) ---
+# Font bawaan tetap ikut supaya Frame Studio tampil sama di perangkat baru.
+backend/data/*
+!backend/data/assets/
+backend/data/assets/*
+!backend/data/assets/fonts/
+backend/data/assets/fonts/user/
+
+# --- Video / audio hasil ---
+Siap Upload/
+# produksi/: video hasil & cadangan skrip tidak ikut; naskah + bible cerita ikut
+tools/animasi-3d/produksi/**
+!tools/animasi-3d/produksi/*/
+tools/animasi-3d/produksi/*/video*/
+tools/animasi-3d/produksi/__pycache__/
+!tools/animasi-3d/produksi/*/naskah*.json
+!tools/animasi-3d/produksi/*/bible.json
+!tools/animasi-3d/produksi/*/bible.md
+tools/animasi-3d/hasil*/
+tools/animasi-3d/_llm_terakhir.txt
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.mp3
+*.wav
+*.m4a
+
+# --- Lingkungan (dibuat ulang oleh setup.bat / setup.sh) ---
+.venv/
+.venv-*/
+venv/
+node_modules/
+frontend/dist/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# --- Cadangan lama (riwayat git sudah jadi cadangan) ---
+backup-*/
+frontend/src.backup-*/
+**/cadangan-*/
+
+# --- Alat bantu lokal & sampah ---
+.claude-flow/
+.swarm/
+.superpowers/
+*.log
+.DS_Store
+Thumbs.db
+/25000
+/{

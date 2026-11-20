@@ -1,0 +1,36 @@
+/* Prompt Flow — hanya dipakai halaman PromptFlow.jsx */
+.pf-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 16px; }
+.pf-inline { margin-left: 12px; }
+
+.pf-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.pf-item {
+  font: inherit; color: var(--text); text-align: left; width: 100%; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: transparent; border: 1px solid var(--line2); border-radius: 8px; padding: 10px 12px; min-height: 44px;
+}
+.pf-item:hover, .pf-item.is-open { border-color: var(--accent); }
+.pf-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pf-item-title { font-weight: 600; font-size: 13.5px; overflow-wrap: anywhere; }
+
+.pf-logline { margin: 0 0 12px; color: var(--muted); }
+.pf-warn { margin: 0 0 16px; padding: 10px 12px 10px 30px; border-radius: 8px; background: #2a2306; color: #ffe9a6; font-size: 13px; }
+.pf-warn li + li { margin-top: 4px; }
+.pf-ok { margin: 0 0 16px; color: var(--ok); font-size: 13px; }
+.pf-note { margin: 16px 0 0; color: var(--muted); font-size: 12.5px; }
+.pf-steps { margin: 0 0 16px; padding-left: 20px; font-size: 13px; line-height: 1.6; }
+
+.pf-tokoh { display: grid; gap: 12px; margin: 8px 0 16px; }
+.pf-tokoh-card { border: 1px solid var(--line2); border-radius: 8px; padding: 12px; }
+
+.pf-shots { list-style: none; margin: 16px 0; padding: 0; display: grid; gap: 12px; }
+.pf-shot.is-twist { border-color: var(--danger); }
+.pf-shot-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.pf-tools { margin-left: auto; display: flex; gap: 4px; }
+.pf-prompt {
+  margin: 0 0 12px; padding: 12px; border-radius: 8px; background: var(--bg, #0b0b0b); border: 1px solid var(--line2);
+  font-size: 12.5px; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; max-width: 100%;
+}
+.pf-details summary { cursor: pointer; font-size: 13px; color: var(--muted); margin-bottom: 8px; min-height: 32px; }
+
+.pf-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+section.pf-actions { margin-top: 16px; }

@@ -1,0 +1,31 @@
+/* Naskah horor — hanya dipakai halaman NaskahHoror.jsx */
+.nh-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 16px; }
+.nh-inline { margin-left: 12px; }
+.nh-actions { margin-top: 16px; }
+
+.nh-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.nh-item {
+  font: inherit; color: var(--text); text-align: left; width: 100%; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: transparent; border: 1px solid var(--line2); border-radius: 8px; padding: 10px 12px; min-height: 44px;
+}
+.nh-item:hover, .nh-item.is-open { border-color: var(--accent); }
+.nh-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.nh-item-title { font-weight: 600; font-size: 13.5px; overflow-wrap: anywhere; }
+
+.nh-warn { margin: 0 0 16px; padding: 10px 12px 10px 30px; border-radius: 8px; background: #2a2306; color: #ffe9a6; font-size: 13px; }
+.nh-warn li + li { margin-top: 4px; }
+.nh-ok { margin: 0 0 16px; color: var(--ok); font-size: 13px; }
+.nh-note { margin: 0 0 10px; color: var(--muted); font-size: 12.5px; }
+
+.nh-scenes { list-style: none; margin: 16px 0; padding: 0; display: grid; gap: 12px; }
+.nh-scene.is-twist { border-color: var(--danger); }
+.nh-scene-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.nh-scene-tools { margin-left: auto; display: flex; gap: 4px; }
+.nh-scene-foot { display: flex; gap: 20px; align-items: flex-end; flex-wrap: wrap; }
+.nh-scene-foot .field { min-width: 200px; margin-bottom: 0; }
+.nh-scene-foot .check-row { margin-bottom: 8px; }
+
+.nh-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.nh-actions .hint { flex-basis: 100%; }
+.nh-actions .nh-ok { margin: 0; }

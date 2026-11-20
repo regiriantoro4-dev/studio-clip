@@ -1,0 +1,275 @@
+{
+ "judul": "Order Jam Dua Pagi",
+ "penulis": "Claude (sesi), dari bible.json ojol",
+ "catatan": "POV kamu = Budi. Aturan kuntilanak: muncul setelah lampu minyak berkedip DAN HP mati (adegan 5 -> 6 -> 7). Setup kunci (3) -> payoff bingkai foto (6-7). Twist: Siti sendiri arwah pemilik rumah yang butuh diantar pulang.",
+ "tokoh": {
+  "budi": {
+   "rambut": "pendek",
+   "baju": "#2f8a4a",
+   "kulit": "#e8cfae",
+   "tas": false,
+   "syal": null
+  },
+  "siti": {
+   "rambut": "sanggul",
+   "baju": "#ece6da",
+   "kulit": "#f1dcc4",
+   "warnaRambut": "#1a1414",
+   "tas": true,
+   "syal": null
+  }
+ },
+ "adegan": [
+  {
+   "beat": "hook",
+   "lokasi": "jalan_hutan",
+   "shot": "lebar",
+   "sfx": [
+    [
+     "phone",
+     null
+    ]
+   ],
+   "teks": "Kalau ada order jam dua pagi... dari akun tanpa foto... jangan diambil.",
+   "tokoh": [
+    {
+     "id": "budi",
+     "posisi": "kanan",
+     "pose": "lihat",
+     "ekspresi": "heran"
+    }
+   ],
+   "fokus": "budi"
+  },
+  {
+   "beat": "normal",
+   "lokasi": "jalan_hutan",
+   "shot": "sedang",
+   "sfx": [
+    [
+     "footsteps",
+     "GPS"
+    ]
+   ],
+   "teks": "Kamu ambil. Penumpangnya cewek, namanya Siti. Katanya mau bikin vlog rumah angker. GPS nyuruh kamu lewat hutan.",
+   "tokoh": [
+    {
+     "id": "budi",
+     "posisi": "kanan",
+     "pose": "pinggang",
+     "ekspresi": "santai"
+    },
+    {
+     "id": "siti",
+     "posisi": "kiri",
+     "pose": "angkat",
+     "ekspresi": "tawa"
+    }
+   ],
+   "fokus": "siti"
+  },
+  {
+   "beat": "aneh",
+   "lokasi": "jalan_hutan",
+   "shot": "dekat",
+   "sfx": [
+    [
+     "wind",
+     null
+    ]
+   ],
+   "kabut": true,
+   "teks": "Di bawah beringin, Siti minta berhenti. Dia mungut kunci besi karatan dari tanah... kayak udah tahu tempatnya.",
+   "tokoh": [
+    {
+     "id": "siti",
+     "posisi": "kiri",
+     "pose": "lihat",
+     "ekspresi": "santai",
+     "berubah": [
+      [
+       "mungut",
+       "angkat",
+       "sombong"
+      ]
+     ]
+    },
+    {
+     "id": "budi",
+     "posisi": "kanan",
+     "pose": "diam",
+     "ekspresi": "heran",
+     "berubah": [
+      [
+       "kayak",
+       "sedekap",
+       "cemas"
+      ]
+     ]
+    }
+   ],
+   "fokus": "siti"
+  },
+  {
+   "beat": "sangkal",
+   "lokasi": "rumah_tua",
+   "shot": "lebar",
+   "sfx": [
+    [
+     "creak",
+     "Pintunya"
+    ]
+   ],
+   "pintu": "Pintunya",
+   "teks": "GPS berhenti di rumah tua. Pintunya kebuka sendiri. Kamu ketawa. 'Angin doang, Mbak.'",
+   "tokoh": [
+    {
+     "id": "budi",
+     "posisi": "kanan",
+     "pose": "diam",
+     "ekspresi": "kaget",
+     "berubah": [
+      [
+       "ketawa",
+       "pinggang",
+       "tawa"
+      ]
+     ]
+    },
+    {
+     "id": "siti",
+     "posisi": "kiri",
+     "pose": "diam",
+     "ekspresi": "santai"
+    }
+   ],
+   "fokus": "budi"
+  },
+  {
+   "beat": "eskalasi",
+   "lokasi": "rumah_tua",
+   "shot": "dekat",
+   "sfx": [
+    [
+     "static",
+     "berkedip"
+    ],
+    [
+     "breath",
+     "ketawa"
+    ]
+   ],
+   "lampu": [
+    [
+     "berkedip",
+     0.5
+    ]
+   ],
+   "teks": "Di teras, lampu minyak mulai berkedip. Dari dalam rumah, ada perempuan ketawa pelan. Siti malah senyum ke kamera.",
+   "tokoh": [
+    {
+     "id": "budi",
+     "posisi": "kanan",
+     "pose": "takut",
+     "ekspresi": "cemas"
+    },
+    {
+     "id": "siti",
+     "posisi": "kiri",
+     "pose": "angkat",
+     "ekspresi": "sombong"
+    }
+   ],
+   "fokus": "budi",
+   "fokusAkhir": [
+    "Siti",
+    "siti"
+   ]
+  },
+  {
+   "beat": "tak_kembali",
+   "lokasi": "rumah_tua",
+   "shot": "pov",
+   "sfx": [
+    [
+     "heartbeat",
+     "HP"
+    ],
+    [
+     "knock",
+     "masukin"
+    ]
+   ],
+   "lampu": [
+    [
+     null,
+     0.5
+    ]
+   ],
+   "hpMati": "HP",
+   "teks": "Terus HP kamu mati. Senter, GPS, semuanya. Siti jalan ke foto tua di dinding... dan masukin kuncinya ke bingkai.",
+   "tokoh": [
+    {
+     "id": "siti",
+     "posisi": "foto",
+     "pose": "tunjuk",
+     "ekspresi": "santai"
+    }
+   ],
+   "fokus": "siti"
+  },
+  {
+   "beat": "twist",
+   "lokasi": "rumah_tua",
+   "shot": "foto",
+   "twist": true,
+   "sfx": [
+    [
+     "breath",
+     "balik"
+    ]
+   ],
+   "lampu": [
+    [
+     null,
+     0.35
+    ]
+   ],
+   "hpMati": true,
+   "teks": "Di foto itu ada perempuan bergaun putih. Mukanya... persis Siti. Siti balik badan... natap kamu. 'Makasih ya, Bang... akhirnya ada yang nganterin aku pulang.'",
+   "tokoh": [
+    {
+     "id": "siti",
+     "posisi": "foto",
+     "pose": "diam",
+     "ekspresi": "santai"
+    }
+   ],
+   "fokus": "siti",
+   "potong": "balik",
+   "jadiKunti": "Makasih",
+   "jumpscare": "pulang"
+  },
+  {
+   "beat": "penutup",
+   "lokasi": "rumah_tua",
+   "shot": "lebar",
+   "gelap": true,
+   "lampu": [
+    [
+     null,
+     0.35
+    ],
+    [
+     "padam",
+     0
+    ]
+   ],
+   "hpMati": true,
+   "teks": "Lampu minyak padam. Dan di aplikasimu... orderan itu minta dikasih bintang. Kamu kasih berapa? Tulis di komentar.",
+   "tokoh": [],
+   "fokus": null,
+   "layarHp": "aplikasimu"
+  }
+ ]
+}

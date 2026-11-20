@@ -1,0 +1,155 @@
+{
+  "transcribe_provider": "groq",
+  "llm_provider": "auto",
+  "language": "id",
+  "whisper_local_model": "medium",
+  "watermark": {
+    "enabled": false,
+    "type": "text",
+    "text": "KKOPLO77",
+    "image": "",
+    "position": "center",
+    "opacity": 0.7,
+    "size": 1.75
+  },
+  "brand": {
+    "enabled": true,
+    "theme": "neon",
+    "name": "KOPLO77",
+    "handle": "",
+    "label": "GAME HOT TERKINI",
+    "color": "#b7810b",
+    "accent": "#ffe047",
+    "font": "Archivo Black",
+    "logo": "",
+    "brand_text": {
+      "enabled": true,
+      "text": "KOPLO77",
+      "position": "top",
+      "offset_y": 1,
+      "width": 77,
+      "font": "Eater",
+      "size": 170,
+      "bold": true,
+      "italic": true,
+      "uppercase": true,
+      "letterSpacing": 13,
+      "color": "#00E5FF",
+      "fill2": "#FF4081",
+      "shine": false,
+      "stroke": "#0D0820",
+      "strokeWidth": 4,
+      "depth": 6,
+      "depthColor": "#0D0820",
+      "depthAngle": 90,
+      "shadowColor": "#000000",
+      "shadowBlur": 20,
+      "shadowX": 0,
+      "shadowY": 8,
+      "glow": "#ffe047",
+      "glowSize": 30,
+      "outline2": "#000000",
+      "outline2Width": 6,
+      "depthColor2": "",
+      "bevel": 0,
+      "bevelStrength": 70,
+      "lightAngle": 240,
+      "texture": "brushed",
+      "textureStrength": 60,
+      "gloss": true,
+      "anim": "rainbow",
+      "animIn": "rubber",
+      "animSpeed": 1,
+      "animAmount": 50,
+      "gradType": "tri",
+      "fill3": "#7C4DFF",
+      "hollow": false,
+      "glitch": 0,
+      "glitchSlices": false,
+      "lineBox": "",
+      "lineBoxColor": "#FFFFFF",
+      "lineBoxPad": 30,
+      "lineBoxRadius": 30,
+      "lineBoxOpacity": 100,
+      "marker": "",
+      "hlWords": "",
+      "hlAuto": "",
+      "hlColor": "",
+      "hlBg": "",
+      "longShadow": 0,
+      "longColor": "#000000",
+      "longAngle": 45,
+      "longFade": false,
+      "curve": 0
+    },
+    "bumper": {
+      "intro": {
+        "enabled": false,
+        "template": "neon_glitch",
+        "font": "Bangers",
+        "tag_font": "Zen Dots",
+        "vars": {
+          "brand": "KOPLO77",
+          "tagline": "GAMING PLATFORM"
+        }
+      },
+      "outro": {
+        "enabled": true,
+        "template": "follow_cta",
+        "font": "Holtwood One SC",
+        "tag_font": "Holtwood One SC",
+        "vars": {
+          "brand": "Subscribe ",
+          "tagline": "SUBSCRIBE",
+          "handle": "@buuubaa6740",
+          "pos": "bawah",
+          "bell": "pojok"
+        }
+      }
+    }
+  },
+  "video_encoder": "auto",
+  "ffmpeg_threads": 4,
+  "comfy": {
+    "url": "http://127.0.0.1:8188",
+    "start_bat": "D:\\ComfyUI\\start_comfy_log.bat",
+    "checkpoint": "",
+    "steps": 30,
+    "cfg": 4.5
+  },
+  "providers": {
+    "groq": {
+      "api_key": "",
+      "base_url": "https://api.groq.com/openai/v1",
+      "llm_model": "openai/gpt-oss-120b",
+      "stt_model": "whisper-large-v3"
+    },
+    "openai": {
+      "api_key": "",
+      "base_url": "https://api.openai.com/v1",
+      "llm_model": "gpt-4o-mini",
+      "stt_model": "whisper-1"
+    },
+    "gemini": {
+      "api_key": "",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
+      "llm_model": "gemini-flash-latest",
+      "tts_model": "gemini-3.1-flash-tts-preview"
+    },
+    "moonshot": {
+      "api_key": "",
+      "base_url": "https://api.moonshot.ai/v1",
+      "llm_model": "kimi-k2-0711-preview"
+    },
+    "anthropic": {
+      "api_key": "",
+      "api": "anthropic",
+      "llm_model": "claude-opus-5-5"
+    },
+    "openrouter": {
+      "api_key": "",
+      "base_url": "https://openrouter.ai/api/v1",
+      "llm_model": "openrouter/free"
+    }
+  }
+}

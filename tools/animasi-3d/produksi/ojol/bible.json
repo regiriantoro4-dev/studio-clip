@@ -1,0 +1,433 @@
+{
+ "konsep": {
+  "premis": [
+   {
+    "judul_kerja": "Malam Sunyi di Rumah Kosong",
+    "premis": "Pengemudi ojol tengah malam tiba di rumah tua yang lama kosong; lampu neon berkedip, motornya tiba‑tiba mogok, dan ia melihat bayangan hitam di ujung koridor yang tak pernah bergerak.",
+    "kenapa_seram": "Keterbatasan cahaya dan motor yang tidak bisa dijalankan menahan protagonis di tempat, sementara keberadaan bayangan yang perlahan mendekat menambah ketegangan tanpa aksi berlebih.",
+    "skor": {
+     "hook": 8,
+     "dekat": 7,
+     "segar": 6,
+     "visual": 8
+    }
+   },
+   {
+    "judul_kerja": "GPS Menyesatkan ke Rumah Hantu",
+    "premis": "Ojol menerima order dari nomor tak dikenal, GPS menuntunnya melewati jalan hutan berkabut ke rumah tua; pintu terbuka sendiri, dan suara tawa kuntilanak terdengar di dalam, namun ia terperangkap karena kabut menebal menutup jalan keluar.",
+    "kenapa_seram": "Kombinasi GPS yang biasanya dipercaya malah menyesatkan, plus kabut yang menutup jalan menciptakan rasa tak berdaya dan menimbulkan ketakutan pada hal yang tak terlihat.",
+    "skor": {
+     "hook": 9,
+     "dekat": 8,
+     "segar": 8,
+     "visual": 9
+    }
+   },
+   {
+    "judul_kerja": "Baterai Mati, Hantu Datang",
+    "premis": "Setelah menerima order misterius, ojol sampai di rumah kayu tua; lampu minyak berkedip, dan ketika ia menyalakan senter, kuntilanak muncul di ujung teras, sementara baterai HPnya habis dan tak bisa memanggil bantuan.",
+    "kenapa_seram": "Ketergantungan pada HP yang tiba‑tiba mati menambah rasa terisolasi; penampakan kuntilanak yang muncul tepat ketika cahaya memudar menimbulkan ketegangan visual yang kuat.",
+    "skor": {
+     "hook": 7,
+     "dekat": 6,
+     "segar": 5,
+     "visual": 7
+    }
+   }
+  ],
+  "terpilih": 1,
+  "alasan": "Premis kedua memiliki hook tertinggi dengan kombinasi GPS yang menyesatkan—sesuatu yang familiar bagi penonton Indonesia—dan visual kabut tebal serta pintu yang terbuka sendiri, memberikan rasa tak berdaya yang kuat serta peluang visual yang menarik di koridor sekolah atau rumah tua."
+ },
+ "tokoh": {
+  "manusia": [
+   {
+    "id": "a",
+    "nama": "Budi",
+    "umur": 28,
+    "peran": "ojol driver",
+    "sifat": [
+     "ceroboh",
+     "pintar jalan"
+    ],
+    "keinginan": "menyelesaikan order tepat waktu dan dapat rating tinggi",
+    "ketakutan": "gelap total serta terperangkap tanpa jalan keluar",
+    "kebiasaan": "selalu cek GPS dulu sebelum berangkat, suka nyanyi dangdut di motor",
+    "cara_bicara": "lo-gue",
+    "penampilan": {
+     "rambut": "pendek",
+     "topi": null,
+     "baju": "#1E90FF",
+     "syal": null,
+     "kacamata": false,
+     "kumis": false,
+     "tas": true,
+     "warnaRambut": "#4B3621"
+    }
+   },
+   {
+    "id": "b",
+    "nama": "Siti",
+    "umur": 24,
+    "peran": "penumpang misterius / pembuat konten",
+    "sifat": [
+     "penasaran",
+     "penyendiri"
+    ],
+    "keinginan": "mengabadikan pengalaman seram untuk vlognya",
+    "ketakutan": "menemui makhluk halus yang tak terlihat",
+    "kebiasaan": "selalu memakai gelang perak, suka foto dengan HP",
+    "cara_bicara": "aku-kamu",
+    "penampilan": {
+     "rambut": "sanggul",
+     "topi": null,
+     "baju": "#FF69B4",
+     "syal": "#FFD700",
+     "kacamata": false,
+     "kumis": false,
+     "tas": false,
+     "warnaRambut": "#8B4513"
+    }
+   }
+  ],
+  "makhluk": {
+   "jenis": "kuntilanak",
+   "asal_usul": "dulu seorang perempuan yang meninggal karena sakit di rumah tua itu, rohnya terperangkap karena tidak ada yang mengantarkan ke alam baka",
+   "aturan": "muncul ketika lampu minyak berkedip dan HP protagonis mati; muncul tepat di teras setelah pintu terbuka sendiri, menunggu hingga cahaya senter menyala sebelum melangkah mendekat"
+  }
+ },
+ "tempat": {
+  "lokasi": [
+   {
+    "id": "jalan_hutan",
+    "alasan": "Menjadi titik awal terjebaknya Budi karena GPS menyesatkan; suasana jalan hutan berkabut menambah rasa tak berdaya dan menyiapkan atmosfer horor sebelum memasuki rumah tua.",
+    "waktu": "02:15 WIB (tengah malam)",
+    "indra": {
+     "suara": "Deru angin menyisir dedaunan, suara motor berderak pelan, dan sesekali terdengar serangga malam berdengung.",
+     "bau": "Udara lembap bercampur aroma tanah basah dan aroma kayu bakar yang samar dari kejauhan.",
+     "cahaya": "Lampu senter Budi menembus kabut tipis, namun cahaya teredam oleh kabut tebal; hanya ada kilau lampu jalan setengah mati di kejauhan.",
+     "suhu": "Sejuk, sekitar 18°C, dengan embusan angin yang membuat kulit terasa dingin."
+    },
+    "benda_kunci": "Kunci besi tua berkarat yang tergantung di rantai motor; ketika diputar, bunyi berderak membuka pintu rahasia di rumah tua.",
+    "pantangan": "Jangan menyalakan lampu neon di tepi jalan karena dapat memicu lampu jalan berkelip‑kelip yang menyesatkan kembali."
+   },
+   {
+    "id": "rumah_tua",
+    "alasan": "Inti konflik muncul di sini: pintu terbuka sendiri, lampu minyak berkedip, dan kuntilanak muncul. Lokasi ini memusatkan ketegangan pada satu ruang terbatas sehingga penonton terfokus pada aksi horor.",
+    "waktu": "02:20 WIB (setelah menuruni jalan hutan, tepat di depan rumah)",
+    "indra": {
+     "suara": "Suara kayu berderit, tawa pelan kuntilanak yang melengking, serta gemerisik daun kering di teras.",
+     "bau": "Aroma kapur barus, kayu tua yang lembap, dan bau asap lampu minyak yang hampir padam.",
+     "cahaya": "Lampu minyak berkedip‑kedip, bayangan panjang menari di dinding; sesekali cahaya senter Budi menembus gelap, menyorot siluet kuntilanak di ujung teras.",
+     "suhu": "Dingin lembab, sekitar 16°C, dengan angin masuk lewat celah pintu yang menambah rasa menggigil."
+    },
+    "benda_kunci": "Lukisan tua berbingkai kayu yang tergantung di dinding ruang tamu; di baliknya tersembunyi foto keluarga pemilik rumah dan catatan yang menjelaskan cara menenangkan roh kuntilanak.",
+    "pantangan": "Jangan menyalakan lampu listrik di dalam rumah karena dapat memicu lampu minyak berkedip lebih cepat dan mempercepat kedatangan kuntilanak."
+   }
+  ]
+ },
+ "gaya": {
+  "sudut_pandang": "kamu",
+  "alasan": "Dengan \"kamu\" penonton jadi tokoh utama, merasakan GPS menyesatkan, kabut, dan ketakutan secara langsung, cocok untuk horor pendek yang mengandalkan imersi.",
+  "tempo": "Awal pelan menekan, menambah rasa cemas; saat pintu terbuka dan kuntilanak muncul tempo cepat panik, kemudian kembali menurun saat akhir misteri.",
+  "kata_khas": [
+   "gak",
+   "banget",
+   "kayak",
+   "serem",
+   "eh"
+  ],
+  "aturan_dialog": "Kalimat maksimal dua belas kata, boleh potongan (\"Sepi banget.\"), gunakan jeda \"...\" untuk menahan napas, bahasa sehari-hari, bunyi ditulis langsung (\"Tok. Tok.\"), angka ditulis huruf, kutipan tunggal untuk dialog tokoh lain.",
+  "contoh": [
+   "Kamu lihat lampu neon berkedip... seram banget.",
+   "Siti: 'Eh, ada apa itu?'",
+   "Tok. Tok. suara motor menggerunyik di kabut."
+  ]
+ },
+ "alur": {
+  "beat": [
+   {
+    "no": 1,
+    "jenis": "hook",
+    "tujuan": "Menarik perhatian penonton agar berhenti scroll",
+    "emosi": "penasaran, tegang",
+    "info_baru": "Budi terima order misterius, GPS menuntun ke rumah kosong yang lampunya berkedip",
+    "lokasi": "jalan_hutan",
+    "kejadian": null
+   },
+   {
+    "no": 2,
+    "jenis": "normal",
+    "tujuan": "Memperkenalkan tokoh, tujuan, dan benda kunci secara natural",
+    "emosi": "santai, fokus",
+    "info_baru": "Budi cek GPS, Siti siapkan kamera, Budi menemukan kunci besi tua di rantai motor",
+    "lokasi": "jalan_hutan",
+    "kejadian": "lampu_kedip"
+   },
+   {
+    "no": 3,
+    "jenis": "aneh",
+    "tujuan": "Menunjukkan tanda aneh pertama yang menimbulkan kegelisahan",
+    "emosi": "cemas",
+    "info_baru": "Di depan rumah, lampu neon berkedip sendirian, terdengar tawa pelan dari dalam",
+    "lokasi": "rumah_tua",
+    "kejadian": "hantu_jauh"
+   },
+   {
+    "no": 4,
+    "jenis": "sangkal",
+    "tujuan": "Karakter menolak rasa takut dengan alasan logis",
+    "emosi": "skeptis, mencoba tenang",
+    "info_baru": "Budi menolak takut, bilang itu cuma glitch lampu, Siti tetap merekam",
+    "lokasi": "rumah_tua",
+    "kejadian": null
+   },
+   {
+    "no": 5,
+    "jenis": "eskalasi",
+    "tujuan": "Aturan makhluk mulai berlaku, ketegangan meningkat",
+    "emosi": "takut",
+    "info_baru": "Lampu minyak di teras berkedip, kuntilanak muncul perlahan di ujung teras",
+    "lokasi": "rumah_tua",
+    "kejadian": "hantu_dekat"
+   },
+   {
+    "no": 6,
+    "jenis": "tak_kembali",
+    "tujuan": "Menegaskan tidak ada jalan kembali, titik tanpa harapan",
+    "emosi": "panik",
+    "info_baru": "Pintu depan terkunci, kabut tebal menyelimuti, HP Budi mati, senter redup",
+    "lokasi": "rumah_tua",
+    "kejadian": "kabut"
+   },
+   {
+    "no": 7,
+    "jenis": "twist",
+    "tujuan": "Mengungkap kebenaran mengerikan yang memperburuk situasi",
+    "emosi": "neraka, ngeri",
+    "info_baru": "Budi ingat kunci, memutar membuka panel di belakang lukisan, menampakkan ruangan penuh bayangan kuntilanak yang menyerang",
+    "lokasi": "rumah_tua",
+    "kejadian": "jumpscare"
+   },
+   {
+    "no": 8,
+    "jenis": "penutup",
+    "tujuan": "Meninggalkan rasa takut menggantung dan mengajak penonton berkomentar",
+    "emosi": "merinding",
+    "info_baru": "Bayangan menutup mereka, suara tawa menghilang, layar hitam… Apa yang akan terjadi selanjutnya?",
+    "lokasi": "rumah_tua",
+    "kejadian": "gelap"
+   }
+  ],
+  "setup_payoff": [
+   {
+    "setup_di_beat": 2,
+    "payoff_di_beat": 7,
+    "apa": "Kunci besi tua berkarat yang Budi temukan membuka panel rahasia di belakang lukisan, memunculkan sekumpulan kuntilanak yang mengurung mereka"
+   }
+  ],
+  "tokoh_dibuang": []
+ },
+ "prosa": {
+  "judul": "GPS Menyesatkan ke Rumah Hantu",
+  "narasi": "GPS ngarahin kamu ke rumah tua lampunya berkedip malam. Kamu nyalain senter, temuin kunci besi tua tergantung di rantai motor. Siti siap rekam, kamera mengarah ke teras berdebu. Lampu neon jalan berkedip, suasana banget serem. Depan pintu, lampu neon berkedip sendirian, tawa kayak terdengar. Kamu lihat bayangan hitam jauh di ujung koridor. 'Gak usah takut, cuma glitch lampu, bro.' Lampu minyak teras berkedip, kuntilanak muncul perlahan. Kamu terdiam, napas tertahan... Pintu depan terkunci, kabut tebal menutupi, HP kamu mati. 'Eh, lihat kunci di belakang lukisan.' Kamu putar kunci, panel terbuka, bayangan kuntilanak menyerang. Jumpscare muncul tepat di depan mata kamu. Bayangan menutup kalian, tawa menghilang, layar hitam... Kamu masih di sini? Tulis di komentar."
+ },
+ "naskah": {
+  "judul": "GPS Menyesatkan ke Rumah Hantu",
+  "hook_layar": "Jalan Gelap Rumah Berkedip",
+  "cta_layar": "Komentar Jika Berani",
+  "adegan": [
+   {
+    "teks": "GPS ngarahin kamu ke rumah tua lampunya berkedip malam.",
+    "lokasi": "jalan_hutan",
+    "shot": "lebar",
+    "fokus": "a",
+    "tokoh": [
+     {
+      "id": "a",
+      "posisi": "kiri",
+      "pose": "lihat",
+      "ekspresi": "heran"
+     }
+    ],
+    "berubah": [],
+    "makhluk": null,
+    "kejadian": null,
+    "sfx": "phone",
+    "twist": false
+   },
+   {
+    "teks": "Kamu nyalain senter, temuin kunci besi tua tergantung di rantai motor. Siti siap rekam, kamera mengarah ke teras berdebu.",
+    "lokasi": "jalan_hutan",
+    "shot": "sedang",
+    "fokus": "a",
+    "tokoh": [
+     {
+      "id": "a",
+      "posisi": "kiri",
+      "pose": "angkat",
+      "ekspresi": "santai"
+     },
+     {
+      "id": "b",
+      "posisi": "kanan",
+      "pose": "tunjuk",
+      "ekspresi": "santai"
+     }
+    ],
+    "berubah": [],
+    "makhluk": null,
+    "kejadian": null,
+    "sfx": "footsteps",
+    "twist": false
+   },
+   {
+    "teks": "Lampu neon jalan berkedip, suasana banget serem. Depan pintu, lampu neon berkedip sendirian, tawa kayak terdengar.",
+    "lokasi": "rumah_tua",
+    "shot": "dekat",
+    "fokus": "a",
+    "tokoh": [
+     {
+      "id": "a",
+      "posisi": "tengah",
+      "pose": "diam",
+      "ekspresi": "cemas"
+     }
+    ],
+    "berubah": [],
+    "makhluk": null,
+    "kejadian": "lampu_kedip",
+    "sfx": "static",
+    "twist": false
+   },
+   {
+    "teks": "Kamu lihat bayangan hitam jauh di ujung koridor. 'Gak usah takut, cuma glitch lampu, bro.'",
+    "lokasi": "rumah_tua",
+    "shot": "pov",
+    "fokus": "a",
+    "tokoh": [
+     {
+      "id": "a",
+      "posisi": "tengah",
+      "pose": "kaget",
+      "ekspresi": "kaget"
+     }
+    ],
+    "berubah": [],
+    "makhluk": null,
+    "kejadian": "hantu_jauh",
+    "sfx": "wind",
+    "twist": false
+   },
+   {
+    "teks": "Lampu minyak teras berkedip, kuntilanak muncul perlahan.",
+    "lokasi": "rumah_tua",
+    "shot": "dekat",
+    "fokus": "a",
+    "tokoh": [
+     {
+      "id": "a",
+      "posisi": "tengah",
+      "pose": "diam",
+      "ekspresi": "cemas"
+     }
+    ],
+    "berubah": [],
+    "makhluk": {
+     "jenis": "kuntilanak",
+     "posisi": "dekat"
+    },
+    "kejadian": "hantu_dekat",
+    "sfx": "creak",
+    "twist": false
+   },
+   {
+    "teks": "Kamu terdiam, napap tertahan... Pintu depan terkunci, kabut tebal menutupi, HP kamu mati.",
+    "lokasi": "rumah_tua",
+    "shot": "sedang",
+    "fokus": "a",
+    "tokoh": [
+     {
+      "id": "a",
+      "posisi": "tengah",
+      "pose": "diam",
+      "ekspresi": "cemas"
+     }
+    ],
+    "berubah": [],
+    "makhluk": null,
+    "kejadian": "kabut",
+    "sfx": "heartbeat",
+    "twist": false
+   },
+   {
+    "teks": "'Eh, lihat kunci di belakang lukisan.' Kamu putar kunci, panel terbuka, bayangan kuntilanak menyerang. Jumpscare muncul tepat di depan mata kamu.",
+    "lokasi": "rumah_tua",
+    "shot": "dekat",
+    "fokus": "a",
+    "tokoh": [
+     {
+      "id": "a",
+      "posisi": "tengah",
+      "pose": "kaget",
+      "ekspresi": "kaget"
+     }
+    ],
+    "berubah": [],
+    "makhluk": {
+     "jenis": "kuntilanak",
+     "posisi": "depan"
+    },
+    "kejadian": "jumpscare",
+    "sfx": "none",
+    "twist": true
+   },
+   {
+    "teks": "Bayangan menutup kalian, tawa menghilang, layar hitam... Kamu masih di sini? Tulis di komentar.",
+    "lokasi": "rumah_tua",
+    "shot": "lebar",
+    "fokus": "a",
+    "tokoh": [
+     {
+      "id": "a",
+      "posisi": "tengah",
+      "pose": "diam",
+      "ekspresi": "heran"
+     }
+    ],
+    "berubah": [],
+    "makhluk": null,
+    "kejadian": "gelap",
+    "sfx": "none",
+    "twist": false
+   }
+  ]
+ },
+ "editor": {
+  "skor": {
+   "hook": 6,
+   "logika_sebab_akibat": 7,
+   "setup_payoff": 8,
+   "konsistensi_tokoh": 6,
+   "konsistensi_gaya_bicara": 7,
+   "ketegangan_naik": 7,
+   "twist_mengerikan": 6,
+   "kelayakan_visual": 8,
+   "rasa_indonesia": 8,
+   "enak_didengar": 6
+  },
+  "masalah": [
+   "Hook (adegan 1) terlalu datar; tidak ada visual atau suara yang langsung menegangkan. Perbaiki dengan membuka dengan close‑up lampu neon berkedip dan suara \"Tik… Tik…\" sebelum teks GPS muncul.",
+   "Dialog tidak diberi label speaker dan tidak sepenuhnya memakai gaya Budi (lo‑gue) atau Siti (aku‑kamu). Tambahkan \"Budi:\" atau \"Siti:\" di setiap baris dialog dan gunakan slang yang konsisten, contoh: Budi: \"Lo liat lampu itu, bro?\" Siti: \"Aku mau vlog ini, serius!\"",
+   "Beberapa kalimat melebihi batas 12 kata atau tidak memakai jeda \"...\". Misalnya \"Lampu neon jalan berkedip, suasana banget serem\" (8 kata ok) tapi \"Kamu nyalain senter, temuin kunci besi tua tergantung di rantai motor\" (14 kata). Potong menjadi \"Kamu nyalain senter... temuin kunci besi tua di rantai motor.\"",
+   "Urutan aturan kuntilanak tidak dipatuhi: makhluk seharusnya muncul setelah lampu minyak berkedip dan HP mati, namun muncul di adegan 5 sebelum HP mati (adegan 6). Pindahkan adegan \"hantu_dekat\" ke setelah adegan kabut/HP mati.",
+   "Twist (adegan 7) kurang mengerikan; hanya jumpscare biasa. Buat twist lebih menakutkan dengan menampilkan panel rahasia membuka gerbang yang mengeluarkan sekumpulan kuntilanak, menutup jalan keluar secara permanen.",
+   "Ketegangan naik terlalu cepat antara adegan 2‑3. Sisipkan adegan singkat (misalnya suara langkah di koridor, bayangan bergerak) untuk menambah rasa cemas sebelum lampu kedip.",
+   "Beberapa dialog tidak mencerminkan sifat tokoh: Budi ceroboh seharusnya membuat keputusan gegabah (misal memutar kunci tanpa berpikir). Tambahkan baris seperti \"Budi: \"Gue cuma muter aja, bro, jangan dipikirin.\"",
+   "Beberapa adegan kurang sound effect yang memperkuat suasana, misalnya jumpscare butuh \"Screech!\" atau napas terengah‑engah. Tambahkan SFX yang sesuai."
+  ],
+  "lolos": false
+ },
+ "catatan": "revisi terhenti karena LLM gratis gagal; jalankan ulang untuk melanjutkan",
+ "dipilih": "versi putaran 1 (nilai 6.90)",
+ "cek_mesin": []
+}

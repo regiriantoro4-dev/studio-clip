@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id" data-composition-variables='[
+  {"id":"brand","type":"string","label":"Teks utama","default":"KOPLO77"},
+  {"id":"tagline","type":"string","label":"Tagline","default":"GAMING HIGHLIGHT"},
+  {"id":"pos","type":"string","label":"Posisi di layar","default":"tengah","options":[["atas","Atas"],["tengah","Tengah"],["bawah","Bawah"]]},
+  {"id":"size","type":"string","label":"Ukuran teks","default":"100","options":[["80","Kecil"],["100","Normal"],["120","Besar"]]},
+  {"id":"c1","type":"color","label":"Warna teks","default":"#FFFFFF"},
+  {"id":"c2","type":"color","label":"Warna aksen","default":"#FF2A3D"},
+  {"id":"c3","type":"color","label":"Warna gelap / sisi 3D","default":"#140003"},
+  {"id":"glow","type":"color","label":"Garis kecepatan","default":"#FFD100"}
+]'>
+<head>
+  <meta charset="utf-8" />
+  <script src="vendor/gsap.min.js"></script>
+  <style>
+    html, body { margin: 0; background: transparent; }
+    #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: transparent; }
+    .center { position: absolute; left: 540px; top: 930px; width: 0; height: 0; }
+    .lines { position: absolute; left: -900px; top: -900px; width: 1800px; height: 1800px; border-radius: 50%;
+      -webkit-mask: radial-gradient(circle, transparent 22%, #000 30%, #000 60%, transparent 72%); mask: radial-gradient(circle, transparent 22%, #000 30%, #000 60%, transparent 72%); }
+    .wave { position: absolute; left: -260px; top: -110px; width: 520px; height: 220px; border-radius: 50%; border: 10px solid; }
+    .t { position: absolute; left: -540px; top: -120px; width: 1080px; text-align: center; white-space: nowrap; font: 400 210px/1 "BrandFont", sans-serif; font-style: italic; }
+    .band { position: absolute; left: -470px; top: 120px; width: 940px; height: 96px; transform: skewX(-14deg); }
+    .tag { position: absolute; left: -540px; top: 140px; width: 1080px; text-align: center; font: 400 54px/1 "TagFont", sans-serif; letter-spacing: 10px; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="bumper" data-start="0" data-duration="2.4" data-width="1080" data-height="1920" data-fps="30">
+    <div class="center" id="center">
+      <div class="lines" id="lines"></div>
+      <div class="wave" id="wave"></div>
+      <div class="band" id="band"></div>
+      <div class="tag" id="tag"></div>
+      <div class="t" id="t"></div>
+    </div>
+  </div>
+  <script>
+    const V = (window.__hyperframes && window.__hyperframes.getVariables()) || {}
+    const S = Math.max(0.6, Math.min(1.4, (parseFloat(V.size) || 100) / 100))
+    document.getElementById('center').style.top = (V.pos === 'atas' ? 560 : V.pos === 'bawah' ? 1320 : 930) + 'px'
+    const brand = String(V.brand || 'KOPLO77').toUpperCase()
+    const c1 = V.c1 || '#FFFFFF', c2 = V.c2 || '#FF2A3D', c3 = V.c3 || '#140003', glow = V.glow || '#FFD100'
+    const el = (id) => document.getElementById(id)
+    const hexA = (h, a) => { const n = parseInt(String(h).slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})` }
+    const t = el('t'); t.textContent = brand; t.style.color = c1
+    t.style.webkitTextStroke = `6px ${c3}`
+    t.style.textShadow = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((k) => `${k * 1.2}px ${k * 1.6}px 0 ${k < 5 ? c2 : c3}`).join(',') + `, 20px 30px 30px rgba(0,0,0,.6)`
+    el('lines').style.background = `repeating-conic-gradient(from 3deg, ${hexA(glow, .55)} 0deg 1.4deg, transparent 1.4deg 9deg)`
+    el('wave').style.borderColor = c1
+    el('band').style.background = c2; el('band').style.boxShadow = `10px 10px 0 ${c3}`
+    el('tag').textContent = String(V.tagline || '').toUpperCase(); el('tag').style.color = c1
+    el('tag').style.textShadow = `3px 3px 0 ${c3}`
+    function fit() {
+      t.style.fontSize = 210 * S + 'px'; el('tag').style.fontSize = 54 * S + 'px'
+      const k = Math.min(1, 1000 / Math.max(1, t.scrollWidth)); if (k < 1) t.style.fontSize = 210 * S * k + 'px'
+      const kt = Math.min(1, 860 / Math.max(1, el('tag').scrollWidth)); if (kt < 1) el('tag').style.fontSize = 54 * S * kt + 'px'
+    }
+    function build() {
+      fit()
+      const tl = gsap.timeline({ paused: true })
+      tl.fromTo('#t', { scale: 4, opacity: 0, rotation: -8 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.22, ease: 'power4.in' }, 0)
+        .fromTo('#wave', { scale: 0.4, opacity: 1 }, { scale: 3.4, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.22)
+        .fromTo('#lines', { opacity: 0, scale: 0.8, rotation: 0 }, { opacity: 1, scale: 1.1, rotation: 6, duration: 0.5, ease: 'power2.out' }, 0.2)
+        .to('#lines', { opacity: 0, duration: 0.6 }, 0.9)
+      // guncangan layar setelah hentakan
+      const sh = [[18, -12], [-16, 10], [12, 8], [-9, -7], [6, 4], [-3, -2], [0, 0]]
+      sh.forEach(([x, y], i) => tl.to('#center', { x, y, duration: 0.035, ease: 'none' }, 0.22 + i * 0.035))
+      tl.fromTo('#band', { scaleX: 0, transformOrigin: '0% 50%' }, { scaleX: 1, duration: 0.3, ease: 'power3.out' }, 0.5)
+        .fromTo('#tag', { x: -120, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: 'power3.out' }, 0.62)
+        .fromTo('#t', { scale: 1 }, { scale: 1.04, duration: 1.2, ease: 'none' }, 0.3)
+        .to('#center', { x: 1300, opacity: 0, duration: 0.3, ease: 'power3.in' }, 2.08)
+      window.__timelines = window.__timelines || {}
+      window.__timelines.bumper = tl
+    }
+    const f1 = new FontFace('BrandFont', 'url(fonts/brand.ttf)'), f2 = new FontFace('TagFont', 'url(fonts/tag.ttf)')
+    Promise.all([f1.load(), f2.load()]).then((fs) => { fs.forEach((f) => document.fonts.add(f)); build() }, build)
+  </script>
+</body>
+</html>
