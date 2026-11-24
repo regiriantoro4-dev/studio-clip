@@ -38,9 +38,18 @@ JOBS: dict[str, Job] = {}
 
 
 def start(kind: str, fn, *args, **kwargs) -> Job:
+    return launch(create(kind), fn, *args, **kwargs)
+
+
+def create(kind: str) -> Job:
+    """Daftarkan job (status running) TANPA menjalankannya, agar pemanggil sempat mencatat job.id
+    ke project sebelum thread job membaca/menyimpan project itu."""
     job = Job(kind)
     JOBS[job.id] = job
+    return job
 
+
+def launch(job: Job, fn, *args, **kwargs) -> Job:
     def run():
         from . import jobctx
         jobctx.bind(job.id, job.kind)  # telemetri: panggilan di thread ini milik job ini

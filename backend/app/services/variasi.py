@@ -388,7 +388,7 @@ def run_one(job, pid: str) -> dict:
                 storage.save(p)
                 _write_list(folder, info["batch"])
             except Exception as e:  # noqa: BLE001  satu variasi gagal, sisanya tetap jalan
-                failed.append({"clip": clip["id"], "error": str(e)[:300]})
+                failed.append({"clip": clip["id"], "error": media.ringkas_error(e, 300)})
         p = storage.get(pid)
         files = [c["variasi"]["file"] for c in p["clips"]
                  if (c.get("variasi") or {}).get("file") and (folder / c["variasi"]["file"]).exists()]

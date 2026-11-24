@@ -1,5 +1,6 @@
 """Endpoint produksi variasi Video jadi (batch + lanjutkan)."""
 import shutil
+import threading
 from pathlib import Path
 
 from fastapi import APIRouter, Body, File, Form, HTTPException, UploadFile
@@ -11,15 +12,21 @@ from .projects import ALLOWED_EXTS
 router = APIRouter(prefix="/api")
 
 
+_START_LOCK = threading.Lock()  # cek "sedang berjalan" + mulai job harus satu langkah (klik Lanjutkan dobel)
+
+
 def _start(pids: list[str]):
-    job = jobs.start("readymade", variasi.run, pids)
+    # job_id dicatat DULU, baru thread dijalankan. 19 Nov: thread sempat menyimpan salinan project lama
+    # sehingga job_id tertimpa -> batch tampak tidak berjalan -> Lanjutkan kedua lolos -> 2 job menulis
+    # file konversi yang sama -> file rusak, 10 variasi gagal.
+    job = jobs.create("readymade")
     for pid in pids:
         p = storage.get(pid)
         p["job_id"] = job.id
         p["status"] = "processing"
         p["error"] = ""
         storage.save(p)
-    return job
+    return jobs.launch(job, variasi.run, pids)
 
 
 @router.post("/projects/readymade-variasi")
@@ -77,15 +84,16 @@ def list_batches():
 @router.post("/variasi/batches/{bid}/resume")
 def resume_batch(bid: str):
     """Lanjutkan batch yang terhenti: hanya variasi yang belum jadi yang dirender."""
-    cur = next((b for b in variasi.batches(jobs.get) if b["id"] == bid), None)
-    if not cur:
-        raise HTTPException(404, detail="Batch tidak ditemukan.")
-    if cur["running"]:
-        raise HTTPException(409, detail="Batch ini sedang berjalan.")
-    pids = variasi.unfinished(bid)
-    if not pids:
-        return {"job_id": "", "remaining": 0}
-    job = _start(pids)
+    with _START_LOCK:
+        cur = next((b for b in variasi.batches(jobs.get) if b["id"] == bid), None)
+        if not cur:
+            raise HTTPException(404, detail="Batch tidak ditemukan.")
+        if cur["running"]:
+            raise HTTPException(409, detail="Batch ini sedang berjalan.")
+        pids = variasi.unfinished(bid)
+        if not pids:
+            return {"job_id": "", "remaining": 0}
+        job = _start(pids)
     return {"job_id": job.id, "remaining": cur["total"] - cur["done"]}
 
 

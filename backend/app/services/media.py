@@ -3,6 +3,8 @@ import json
 import shutil
 import subprocess
 import tempfile
+import threading
+import uuid
 
 
 def has_ffmpeg() -> bool:
@@ -44,6 +46,16 @@ def h264_args(settings: dict, quality: int = 19) -> list[str]:
     return args + (["-threads", str(n_thr)] if n_thr > 0 else [])
 
 
+def ringkas_error(e, limit: int = 300) -> str:
+    """Pesan error pendek yang tetap memuat penyebabnya: baris pertama + bagian AKHIR.
+    Log ffmpeg menaruh alasan gagal di akhir; dipotong dari depan yang tersisa hanya banner."""
+    s = str(e).strip()
+    if len(s) <= limit:
+        return s
+    first = s.splitlines()[0][:80]
+    return f"{first} … {s[-(limit - len(first) - 3):]}"
+
+
 def run(cmd: list[str], cwd=None) -> str:
     p = subprocess.run(
         cmd, cwd=cwd, capture_output=True, text=True, encoding="utf-8", errors="replace"
@@ -82,16 +94,74 @@ def video_codec(path) -> str:
     return out.strip().lower()
 
 
+_CONVERT_LOCKS: dict[str, threading.Lock] = {}
+_CONVERT_LOCKS_GUARD = threading.Lock()
+
+
+def _convert_lock(path) -> threading.Lock:
+    key = str(path).lower()
+    with _CONVERT_LOCKS_GUARD:
+        return _CONVERT_LOCKS.setdefault(key, threading.Lock())
+
+
+def _original_of(path):
+    """Asli dari hasil konversi kita (`source_h264.mp4` -> `source.mov` dst.), atau None."""
+    from pathlib import Path
+    p = Path(path)
+    if not p.name.lower().endswith("_h264.mp4"):
+        return None
+    stem = p.name[: -len("_h264.mp4")]
+    for f in sorted(p.parent.glob(stem + ".*")):
+        if f.is_file() and f.stem == stem and f.suffix.lower() not in (".part", ".tmp"):
+            return f
+    return None
+
+
+def converted_ok(path, expected_dur: float) -> bool:
+    """Hasil konversi utuh? Durasi harus sama dengan asli & potongan awal/tengah/akhir bisa didecode.
+    25 Nov: dua job sempat menulis file konversi yang sama bersamaan -> file campur aduk
+    ("Invalid NAL unit size"), lalu 10 variasi terpotong di detik yang sama."""
+    try:
+        dur = probe(path)[0]
+    except Exception:  # noqa: BLE001
+        return False
+    if expected_dur > 0 and abs(dur - expected_dur) > max(1.0, 0.02 * expected_dur):
+        return False
+    for t in sorted({0.0, max(0.0, dur / 2 - 0.5), max(0.0, dur - 1.5)}):
+        p = subprocess.run(
+            ["ffmpeg", "-v", "error", "-ss", f"{t:.2f}", "-i", str(path), "-t", "1",
+             "-map", "0:v:0", "-f", "null", "-"],
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+        )
+        if p.returncode != 0 or (p.stderr or "").strip():
+            return False
+    return True
+
+
 def ensure_browser_playable(path, cb=None) -> str:
     """Video HEVC/ProRes dll. tidak bisa diputar browser (suara jalan, gambar kosong).
-    Konversi sekali ke H.264 MP4 lalu kembalikan path barunya; file asli tetap disimpan."""
+    Konversi sekali ke H.264 MP4 lalu kembalikan path barunya; file asli tetap disimpan.
+    Hasil konversi lama yang rusak dibuat ulang dari aslinya; konversi file yang sama tidak pernah dobel."""
     from pathlib import Path
     src = Path(path)
     if video_codec(src) in BROWSER_VCODECS:
-        return str(src)
+        orig = _original_of(src)
+        if orig is None or not orig.exists():
+            return str(src)
+        with _convert_lock(src):
+            if converted_ok(src, probe(orig)[0]):
+                return str(src)
+        src = orig  # hasil konversi lama rusak -> konversi ulang dari file asli
     dst = src.with_name(src.stem + "_h264.mp4")
-    dur = probe(src)[0]
-    cb = cb or (lambda _p: None)
+    with _convert_lock(dst):
+        dur = probe(src)[0]
+        if dst.exists() and converted_ok(dst, dur):  # job lain baru saja selesai mengonversi
+            return str(dst)
+        return _convert_h264(src, dst, dur, cb or (lambda _p: None))
+
+
+def _convert_h264(src, dst, dur: float, cb) -> str:
+    """Konversi ke file sementara bernama unik, cek hasilnya, baru ganti `dst`."""
     tail = ["-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart"]
     # 18 Nov: utamakan GPU NVIDIA (decode NVDEC + encode NVENC). Video 4K HEVC di CPU (x264)
     # makan belasan menit dan membuat CPU penuh. Kualitas dijaga tinggi (qp 17 ~ setara x264 crf 18)
@@ -101,22 +171,33 @@ def ensure_browser_playable(path, cb=None) -> str:
         enc = str(config.load_settings().get("video_encoder") or "auto")
     except Exception:  # noqa: BLE001
         enc = "auto"
-    if enc in ("auto", "nvenc") and nvenc_available():
-        part = dst.with_name(dst.stem + ".part.mp4")
-        gpu = ["ffmpeg", "-y", "-hwaccel", "cuda", "-i", str(src), "-map", "0:v:0", "-map", "0:a:0?",
-               "-c:v", "h264_nvenc", "-preset", "p5", "-tune", "hq", "-rc", "constqp", "-qp", "17",
-               "-profile:v", "high", "-pix_fmt", "yuv420p",
-               *tail, str(part)]
+
+    def attempt(args: list[str]) -> bool:
+        part = dst.with_name(f"{dst.stem}.{uuid.uuid4().hex[:8]}.part.mp4")  # unik: tak pernah ditulis 2 proses
         try:
-            run_ffmpeg_progress(gpu, dur, cb)
+            run_ffmpeg_progress(["ffmpeg", "-y", *args, *tail, str(part)], dur, cb)
+            if not converted_ok(part, dur):
+                raise RuntimeError("hasil konversi tidak utuh")
             part.replace(dst)
-            return str(dst)
-        except Exception:  # noqa: BLE001
+            return True
+        finally:
             part.unlink(missing_ok=True)
-    cmd = ["ffmpeg", "-y", "-i", str(src), "-map", "0:v:0", "-map", "0:a:0?",
-           "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p",
-           *tail, str(dst)]
-    run_ffmpeg_progress(cmd, dur, cb)
+
+    if enc in ("auto", "nvenc") and nvenc_available():
+        try:
+            if attempt(["-hwaccel", "cuda", "-i", str(src), "-map", "0:v:0", "-map", "0:a:0?",
+                        "-c:v", "h264_nvenc", "-preset", "p5", "-tune", "hq", "-rc", "constqp", "-qp", "17",
+                        "-profile:v", "high", "-pix_fmt", "yuv420p"]):
+                return str(dst)
+        except Exception:  # noqa: BLE001
+            pass
+    try:
+        attempt(["-i", str(src), "-map", "0:v:0", "-map", "0:a:0?",
+                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p"])
+    except RuntimeError as e:
+        if "tidak utuh" in str(e):
+            raise RuntimeError(f"Konversi H.264 {src.name} tidak utuh (durasi/isi tidak cocok dengan asli).") from e
+        raise
     return str(dst)
 
 
@@ -161,4 +242,4 @@ def run_ffmpeg_progress(cmd: list[str], total_duration: float, cb, cwd=None):
         proc.wait()
         if proc.returncode != 0:
             ef.seek(0)
-            raise RuntimeError("ffmpeg gagal:\n" + ef.read()[-2000:])
+            raise RuntimeError("ffmpeg gagal:\n" + ef.read()[-2000:].strip())

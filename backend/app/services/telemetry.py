@@ -81,6 +81,11 @@ def record(agent: str, task: str, status: str, started: float, ended: float | No
            error: str = "", ref: str = "", job: str = ""):
     ended = ended if ended is not None else time.time()
     job = job or _job_ctx().get("id", "")  # panggilan di dalam thread job: tandai job asalnya
+    try:
+        from .media import ringkas_error  # simpan penyebab (akhir log ffmpeg), bukan banner di depannya
+        error = ringkas_error(error or "", 400)
+    except Exception:  # noqa: BLE001
+        pass
     ev = {"agent": agent, "task": str(task)[:120], "status": status, "start": round(started, 3),
           "end": round(ended, 3), "dur": round(max(0.0, ended - started), 3),
           "error": str(error or "")[:400], "ref": str(ref or "")[:60], "job": job}
