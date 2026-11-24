@@ -1,0 +1,16 @@
+Kamu membantu kreator video pendek berbahasa Indonesia (konten horor + klip viral, format Shorts 9:16 dan video panjang) yang ingin akun YouTube-nya cepat berkembang dan bisa dimonetisasi.
+
+TUGAS (kerjakan berurutan):
+1. Cari di web syarat monetisasi YouTube Partner Program (YPP) yang BERLAKU SAAT INI, terutama untuk Indonesia: jumlah subscriber, jam tayang / views Shorts, tahap awal (fan funding) vs penuh (bagi hasil iklan), dan aturan konten (reused content, konten AI/sintetis, label konten yang diubah). Utamakan sumber resmi (support.google.com/youtube, blog.youtube).
+2. Cari strategi pertumbuhan yang terbukti untuk channel baru di 2025-2026: frekuensi upload, Shorts vs video panjang (dan cara Shorts mengarahkan penonton ke video panjang), judul + thumbnail, hook 3 detik pertama, retensi, SEO (judul, deskripsi, tag), jam upload yang cocok untuk penonton Indonesia, playlist, komunitas/komentar.
+3. Cari risiko yang membuat channel gagal monetisasi atau kena demonetisasi, khususnya channel yang memakai klip orang lain, narasi TTS, dan gambar/video AI. Jelaskan cara menghindarinya.
+4. Ringkas jadi rencana aksi 90 hari (minggu 1-4, bulan 2, bulan 3) dengan target angka yang realistis.
+
+ATURAN:
+- Simpan seluruh hasil ke SATU file bernama Riset-YouTube-Monetisasi.md di folder kerja saat ini. Jangan membuat, mengubah, atau menghapus file di luar folder ini.
+- Jangan menginstal apa pun dan jangan menjalankan perintah selain yang perlu untuk mencari di web dan menulis file itu.
+- Setiap klaim angka/aturan WAJIB diberi URL sumber yang benar-benar kamu buka. Kalau tidak menemukan sumber, tulis "(perkiraan, tanpa sumber)". Jangan mengarang sumber.
+- Buka paling banyak 8 halaman web. Jangan membuka ulang halaman yang sudah dibaca.
+- TULIS FILE SECARA BERTAHAP: begitu tugas 1 selesai, langsung buat file dengan bagian 1 (write_file). Setelah tugas 2, 3, dan 4 masing-masing selesai, tambahkan bagian itu ke akhir file (patch/append). Jangan menunda menulis sampai akhir dan jangan menulis seluruh isi dalam satu kali panggilan.
+- Jangan memakai execute_code.
+- Tulis dalam bahasa Indonesia. Di akhir, balas dengan ringkasan 5 baris dan sebutkan berapa sumber yang benar-benar berhasil kamu buka.

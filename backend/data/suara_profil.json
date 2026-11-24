@@ -1,0 +1,24 @@
+{
+  "_catatan": "Pemilih suara gabungan (suara_gabungan.py). 'mesin' dicoba berurutan; gagal -> mesin berikutnya. Ganti suara cukup di sini. 22 Nov 2026.",
+  "narator_horor": {
+    "keterangan": "Narator horor bahasa Indonesia: pria berat, serak, setengah berbisik (dipilih pemilik 22 Nov, VoxCPM2 horor_voxcpm_A)",
+    "mesin": ["voxcpm:narator_horor", "gemini:Charon", "id-ID-ArdiNeural"],
+    "gemini_style": "Ucapkan dalam bahasa Indonesia sebagai narator cerita horor: pelan, berat, setengah berbisik, menegangkan",
+    "rate": "-12%",
+    "pitch": "-6Hz"
+  },
+  "gamer_en": {
+    "keterangan": "Narasi gamer bahasa Inggris (buuubaa, di luar campaign): Gemini Zephyr; ganti bila ada yang lebih bagus",
+    "mesin": ["gemini:Zephyr", "en-US-AndrewNeural"],
+    "gemini_style": "Say in casual American English like a gaming YouTuber reacting to a funny clip with friends: relaxed, natural, hyped, a little held-back laugh, not like a news anchor or an ad",
+    "rate": "+6%",
+    "pitch": "+0Hz"
+  },
+  "gamer_id": {
+    "keterangan": "Narasi gamer bahasa Indonesia: Gemini Zephyr dengan gaya gaul",
+    "mesin": ["gemini:Zephyr", "id-ID-ArdiNeural"],
+    "gemini_style": "Ucapkan dalam bahasa Indonesia gaul seperti YouTuber gaming yang ngobrol santai sama teman: natural, seru, sambil nahan ketawa",
+    "rate": "+8%",
+    "pitch": "+0Hz"
+  }
+}
