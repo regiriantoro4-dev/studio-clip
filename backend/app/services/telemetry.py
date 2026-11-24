@@ -38,6 +38,8 @@ AGENTS = {
     "bumper": ("Animator bumper", "Render intro/outro animasi (HyperFrames)", "layanan"),
 }
 SKIP_JOBS = {"render"}  # job render sudah tercatat oleh agent layanan "renderer"
+# Jenis project -> agent yang memprosesnya (untuk alert "project tertahan")
+_STUCK_AGENT = {"affiliate": "job:affiliate", "horror": "job:horror", "readymade": "job:readymade"}
 
 
 def _dir():
@@ -358,15 +360,29 @@ def _alerts(agents, running, recent, now, storage, media) -> list[dict]:
         provs = sorted({e["agent"][4:] for e in limit})
         add("warning", "Kuota / rate limit AI tercapai", f"{len(limit)} panggilan kena limit dalam 1 jam terakhir "
             f"({', '.join(provs)}). Isi provider cadangan di Pengaturan atau tunggu reset.", limit[-1]["agent"])
-    running_refs = {r["agent"] for r in running}
     try:
+        from .. import jobs
         for p in storage.list_all():
-            if p.get("status") == "processing" and "job:process" not in running_refs:
-                age = now - _ts(p.get("created_at"))
-                if age > 30 * 60:
-                    add("warning", "Project tertahan di status 'processing'",
-                        f"{p.get('title') or p['id']} ({p['id']}) tidak punya proses aktif sejak "
-                        f"{int(age // 3600)} jam lalu. Proses ulang atau hapus dari Riwayat.", "job:process")
+            if p.get("status") != "processing":
+                continue
+            full = storage.get(p["id"]) or {}
+            # Tertahan = job milik project ITU tidak sedang berjalan (job lain yang jalan tidak dihitung;
+            # setelah backend restart job lama hilang dari memori -> juga tertahan)
+            job = jobs.get(full.get("job_id") or "")
+            if job and job.status == "running":
+                continue
+            agent = _STUCK_AGENT.get(full.get("source_type"), "job:process")
+            # Umur dari aktivitas terakhir (project.json disimpan tiap tahap), bukan dari waktu dibuat
+            try:
+                last = storage.project_dir(p["id"]).joinpath("project.json").stat().st_mtime
+            except (OSError, ValueError):
+                last = _ts(p.get("created_at"))
+            age = now - last
+            if age > 30 * 60:
+                lama = f"{int(age // 3600)} jam" if age >= 3600 else f"{int(age // 60)} menit"
+                add("warning", "Project tertahan di status 'processing'",
+                    f"{p.get('title') or p['id']} ({p['id']}) tidak punya proses aktif; aktivitas terakhir "
+                    f"{lama} lalu. Proses ulang atau hapus dari Riwayat.", agent)
     except Exception:  # noqa: BLE001
         pass
     try:

@@ -19,6 +19,7 @@ backend/data/*
 !backend/data/studio/
 !backend/data/acak_gaya.json
 !backend/data/acak_gaya_riwayat.json
+!backend/data/suara_profil.json
 
 # --- Video / audio hasil ---
 Siap Upload/

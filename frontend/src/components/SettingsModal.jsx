@@ -224,7 +224,7 @@ export default function SettingsModal({ onClose }) {
                   </select>
                 </div>
                 <div className="field">
-                  <label>Model Whisper lokal</label>
+                  <label title="Dipakai saat tanpa GPU. Dengan GPU NVIDIA otomatis large-v3-turbo. Whisper lokal juga jadi cadangan gratis kalau Groq gagal.">Model Whisper lokal (CPU)</label>
                   <select className="select" value={s.whisper_local_model}
                     onChange={(e) => setS({ ...s, whisper_local_model: e.target.value })}>
                     {['tiny', 'base', 'small', 'medium', 'large-v3'].map((m) => (

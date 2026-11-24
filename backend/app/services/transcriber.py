@@ -2,7 +2,14 @@
 
 Provider: groq / openai (endpoint kompatibel OpenAI) atau local (faster-whisper).
 Video panjang otomatis dipotong per ~14 menit agar aman dari limit upload API.
+Kalau provider API gagal (kuota/error/jaringan), potongan itu ditranskrip ulang dengan Whisper lokal
+(GPU NVIDIA bila ada, kalau tidak CPU) — gratis, bisa dimatikan lewat setelan transcribe_fallback_local.
 """
+import glob
+import os
+import subprocess
+import sys
+import threading
 from pathlib import Path
 
 import requests
@@ -12,6 +19,8 @@ from . import media
 CHUNK_SECONDS = 840  # 14 menit per potongan audio
 
 _LOCAL_MODELS: dict = {}
+_LOCAL_LOCK = threading.Lock()  # satu transkripsi lokal sekaligus (VRAM 8 GB dibagi dengan render/ComfyUI)
+_DLL_READY = False
 
 
 def transcribe(job, workdir, source, provider, settings, language=None,
@@ -42,7 +51,16 @@ def transcribe(job, workdir, source, provider, settings, language=None,
         if provider == "local":
             segs, words, lang = _local(apath, settings, lang_param, vocab)
         else:
-            segs, words, lang = _api(apath, provider, settings, lang_param, vocab)
+            try:
+                segs, words, lang = _api(apath, provider, settings, lang_param, vocab)
+            except Exception as api_err:  # noqa: BLE001
+                if not settings.get("transcribe_fallback_local", True):
+                    raise
+                job.set(stage=f"Transkripsi audio ({i + 1}/{len(chunks)}) · {provider} gagal, pakai Whisper lokal")
+                try:
+                    segs, words, lang = _local(apath, settings, lang_param, vocab)
+                except Exception as local_err:  # noqa: BLE001
+                    raise RuntimeError(f"{api_err} | Cadangan Whisper lokal juga gagal: {local_err}") from local_err
 
         for s in segs:
             s["start"] += cs
@@ -109,26 +127,78 @@ def _api(path, provider, settings, language, vocab=""):
     return segs, words, (j.get("language") or "")
 
 
-def _local(path, settings, language, vocab=""):
+def _cuda_dlls():
+    """Windows: DLL cuBLAS/cuDNN dari paket pip nvidia-* harus didaftarkan sebelum ctranslate2 dimuat."""
+    global _DLL_READY
+    if _DLL_READY:
+        return
+    _DLL_READY = True
+    for d in glob.glob(os.path.join(sys.prefix, "Lib", "site-packages", "nvidia", "*", "bin")):
+        try:
+            os.add_dll_directory(d)
+        except (OSError, AttributeError):
+            pass
+        os.environ["PATH"] = d + os.pathsep + os.environ.get("PATH", "")
+
+
+def _load_audio(path):
+    """Decode lewat ffmpeg -> float32 16 kHz mono. Tidak lewat PyAV: PyAV baru menolak argumen
+    `metadata_errors` yang dipakai faster-whisper 1.2.1."""
+    import numpy as np
+    raw = subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-i", str(path), "-f", "s16le", "-ac", "1",
+                          "-ar", "16000", "-"], capture_output=True, check=True).stdout
+    return np.frombuffer(raw, np.int16).astype(np.float32) / 32768.0
+
+
+def _local_model(settings, cpu_only=False):
+    """GPU dulu (model whisper_gpu_model, float16), gagal -> CPU (whisper_local_model, int8)."""
+    _cuda_dlls()
     try:
+        import ctranslate2
         from faster_whisper import WhisperModel
     except ImportError:
         raise RuntimeError(
             "faster-whisper belum terpasang. Jalankan: pip install faster-whisper "
             "(atau pilih provider cloud seperti Groq di Pengaturan)."
         ) from None
+    tries = []
+    if not cpu_only and (settings.get("whisper_device") or "auto") in ("auto", "cuda"):
+        try:
+            if ctranslate2.get_cuda_device_count() > 0:
+                tries.append((settings.get("whisper_gpu_model") or "large-v3-turbo", "cuda", "float16"))
+        except Exception:  # noqa: BLE001 — driver/DLL bermasalah -> CPU
+            pass
+    tries.append((settings.get("whisper_local_model") or "small", "cpu", "int8"))
+    last = None
+    for name, device, ctype in tries:
+        key = (name, device)
+        if key in _LOCAL_MODELS:
+            return _LOCAL_MODELS[key]
+        try:
+            _LOCAL_MODELS[key] = WhisperModel(name, device=device, compute_type=ctype)
+            return _LOCAL_MODELS[key]
+        except Exception as e:  # noqa: BLE001 — mis. VRAM penuh dipakai render -> coba CPU
+            last = e
+    raise RuntimeError(f"Whisper lokal tidak bisa dimuat: {last}")
 
-    name = settings.get("whisper_local_model") or "small"
-    if name not in _LOCAL_MODELS:
-        _LOCAL_MODELS[name] = WhisperModel(name, device="cpu", compute_type="int8")
-    model = _LOCAL_MODELS[name]
 
+def _local(path, settings, language, vocab=""):
+    with _LOCAL_LOCK:
+        audio = _load_audio(path)
+        try:
+            return _run_local(_local_model(settings), audio, language, vocab)
+        except Exception:  # noqa: BLE001 — GPU gagal di tengah jalan (mis. VRAM penuh) -> ulang di CPU
+            cpu = _local_model(settings, cpu_only=True)
+            return _run_local(cpu, audio, language, vocab)
+
+
+def _run_local(model, audio, language, vocab):
     segments, info = model.transcribe(
-        str(path), language=language, word_timestamps=True, vad_filter=True,
+        audio, language=language, word_timestamps=True, vad_filter=True,
         initial_prompt=(vocab.strip()[:800] or None),
     )
     segs, words = [], []
-    for s in segments:
+    for s in segments:  # generator: decoding sungguhan terjadi di sini
         segs.append({"start": float(s.start), "end": float(s.end), "text": s.text.strip()})
         for w in (s.words or []):
             token = (w.word or "").strip()

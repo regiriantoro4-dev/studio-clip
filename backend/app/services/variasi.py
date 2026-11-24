@@ -489,10 +489,14 @@ def gallery() -> dict:
     """Semua video variasi yang sudah jadi, lengkap dengan resep dan tanda favorit."""
     prefs = load_prefs()
     fav_keys = {f["key"] for f in prefs["favorites"]}
-    items, batch_ids = [], []
+    arsip = [Path(d) for d in (config.load_settings().get("arsip_dirs") or []) if d]
+    items, batch_ids, folders = [], [], {}
     for p in _batch_projects():
         info = _info(p)
         folder = Path(info.get("folder") or batch_folder(info["batch"]))
+        if not folder.is_dir():  # isi Siap Upload lama sudah dipindah -> cari folder bernama sama di arsip
+            folder = next((a / folder.name for a in arsip if (a / folder.name).is_dir()), folder)
+        folders.setdefault(info["batch"], str(folder))
         if info["batch"] not in batch_ids:
             batch_ids.append(info["batch"])
         for c in p.get("clips") or []:
@@ -518,7 +522,7 @@ def gallery() -> dict:
     for k, extra in acak_gaya.names().items():
         names[k] = {**extra, **names[k]}
     return {"items": items, "batches": sorted(batch_ids, reverse=True), "prefs": prefs, "names": names,
-            "folders": {b: str(batch_folder(b)) for b in batch_ids}}
+            "folders": {b: folders.get(b) or str(batch_folder(b)) for b in batch_ids}}
 
 
 def find_recipe(pid: str, cid: str) -> dict | None:

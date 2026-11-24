@@ -76,9 +76,13 @@ class GLBoundary extends Component {
 export default function Office3D({ scene, selected = null, onSelect = () => {}, onFail }) {
   const controlsRef = useRef()
   const [ready, setReady] = useState(false)
+  // R3F sengaja memutus konteks WebGL (forceContextLoss) ~500 ms setelah kanvas dilepas, mis. saat pindah tab.
+  // Itu bukan kegagalan: hanya laporkan konteks hilang selama komponen masih terpasang.
+  const mounted = useRef(true)
+  useEffect(() => { mounted.current = true; return () => { mounted.current = false } }, [])
   const created = ({ gl }) => {
     setReady(true)
-    gl.domElement.addEventListener('webglcontextlost', (e) => { e.preventDefault(); onFail?.() })
+    gl.domElement.addEventListener('webglcontextlost', (e) => { e.preventDefault(); if (mounted.current) onFail?.() })
   }
   return (
     <div className="o3d">

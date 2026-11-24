@@ -24,7 +24,10 @@ DEFAULT_SETTINGS = {
     "transcribe_provider": "groq",   # groq | openai | local
     "llm_provider": "auto",          # auto = combo Groq>Gemini>OpenRouter>OpenAI>Claude | groq | openai | gemini | moonshot | anthropic
     "language": "id",
-    "whisper_local_model": "small",  # tiny | base | small | medium | large-v3
+    "whisper_local_model": "small",  # model CPU: tiny | base | small | medium | large-v3
+    "whisper_gpu_model": "large-v3-turbo",  # model saat GPU NVIDIA tersedia (float16)
+    "whisper_device": "auto",        # auto (GPU bila ada, lalu CPU) | cuda | cpu
+    "transcribe_fallback_local": True,  # provider API gagal -> transkrip ulang dengan Whisper lokal (gratis)
     "watermark": {
         "enabled": False,
         "type": "text",           # text | image
@@ -45,6 +48,7 @@ DEFAULT_SETTINGS = {
         "font": "Space Grotesk",  # lihat services/border.py FONTS
         "logo": "",               # path relatif dari data/, mis. assets/brand-logo.png
     },
+    "arsip_dirs": [],             # folder tempat isi "Siap Upload" lama dipindah (dicari galeri variasi bila folder asli kosong)
     "video_encoder": "auto",      # auto (NVENC GPU bila ada) | nvenc | x264
     "ffmpeg_threads": 4,          # batas thread ffmpeg (0 = semua core). Laptop sempat mati kepanasan saat render.
     "comfy": {                    # ComfyUI lokal untuk gambar AI (Mode Horor)

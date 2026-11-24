@@ -115,11 +115,15 @@ def _heard_words(path, script: str, settings: dict) -> list[dict]:
       (terbaca sebagai pengulangan palsu).
     Keduanya membuat take bersih dianggap cacat. Tanpa prompt, hasil uji paling akurat (`script` tetap
     diterima untuk kompatibilitas pemanggil)."""
-    for provider in ("groq", "openai"):
-        if not (settings["providers"].get(provider) or {}).get("api_key"):
+    # Groq (gratis, cepat) -> Whisper lokal (gratis, GPU) -> OpenAI (berbayar, terakhir)
+    for provider in ("groq", "local", "openai"):
+        if provider != "local" and not (settings["providers"].get(provider) or {}).get("api_key"):
             continue
         try:
-            _, words, _ = transcriber._api(path, provider, settings, "id", vocab="")
+            if provider == "local":
+                _, words, _ = transcriber._local(path, settings, "id", vocab="")
+            else:
+                _, words, _ = transcriber._api(path, provider, settings, "id", vocab="")
             if words:
                 return words
         except Exception:  # noqa: BLE001 — coba provider berikutnya
